@@ -1,0 +1,336 @@
+.header-nav{
+    position: fixed;
+    top: 5px;
+    width: 97%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.15);
+    background-image: 
+    linear-gradient(
+        to bottom,
+        rgba(0, 224, 56, 0.2)50%,
+        rgba(222, 255, 74, 0.2)100%);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15),
+                inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
+.header-headline {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* отступ между иконкой и текстом */
+    text-align: left;
+}
+.headline-icon {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.7));
+}
+.headline-text h1 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #f3fffd;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.headline-text p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e6f9f0;
+  margin: 4px 0 0 0;
+  letter-spacing: 0.5px;
+}
+.main-nav{
+    width: 100%;              /* занимает всю доступную ширину */
+    max-width: 1200px;        /* не растягивается слишком сильно на больших экранах */
+    display: flex;
+    justify-content: center;  /* выравнивает пункты по центру */
+    transition: width 0.3s ease;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15),
+                inset 0 0 20px rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 15px;
+    
+}
+.main-nav .nav-list{
+    display: flex;
+    flex-direction: row;
+    list-style: none; /*убирает точки пунктов*/
+    gap: 9px;
+    padding: 5px;
+    z-index: 999;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 10px;
+    white-space: nowrap;
+    display: block;
+    text-align: center;
+    background: linear-gradient(to bottom, #60f187 30%,#e7fc91 );
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0 5px rgba(68, 188, 106, 0.9);
+    border-radius: 20px;
+
+    transition: background 0.3s ease, 
+                color 0.3s ease, 
+                box-shadow 0.3s ease, 
+                transform 0.3s ease;
+}
+.nav-list a:hover {
+    background: linear-gradient(145deg, #e6ffb2, #b2ff59); /* Яркий, сочный градиент */
+    color: #00b11d; 
+    font-weight: 700;
+    box-shadow: 0 0 10px #b2ff59;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+}
+
+.nav-list a.active{
+    background: linear-gradient(145deg, #e6ffb2, #b2ff59); /* Яркий, сочный градиент */
+    color: #00b11d; 
+    font-weight: 700;
+    box-shadow: 0 0 10px #b2ff59;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+/*БУРГЕР МЕНЮ*/
+ .burger-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    border: 0;
+}
+.burger {
+    display: none; /* скрываем на десктопе */
+    width: 32px;
+    padding-bottom: 16px;
+    padding-top: 3px;
+    position: absolute; /* Позиционируем относительно header-nav */
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    z-index: 1100; /* Поверх всего */
+}
+.burger .burger-lines,
+.burger .burger-lines::before,
+.burger .burger-lines::after {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #f3fffd;
+    border-radius: 3px;
+    position: relative;
+    transition: transform .25s ease, opacity .2s ease;
+}
+
+.burger .burger-lines::before,
+.burger .burger-lines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.burger .burger-lines::before { top: -10px; }
+.burger .burger-lines::after { top: 10px; }
+
+/* Анимация закрытия (Крестик) */
+.burger-toggle:checked ~ .burger .burger-lines {
+    background: transparent;
+}
+.burger-toggle:checked ~ .burger .burger-lines::before {
+    transform: translateY(10px) rotate(45deg);
+}
+.burger-toggle:checked ~ .burger .burger-lines::after {
+    transform: translateY(-10px) rotate(-45deg);
+}
+/*МОБИЛЬНАЯ ВЕРСИЯ НАВИГАЦИИ*/
+.mobile-nav {
+    display: none; /* скрываем по умолчанию */
+}
+
+
+.mobile-nav a:hover {
+    background: linear-gradient(145deg, #e6ffb2, #b2ff59);
+    color: #00b11d;
+    font-weight: 700;
+    box-shadow: 0 0 10px #b2ff59;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+}
+/*АДАПТИВЫ*/
+@media(max-width: 1220px){
+    .header-nav {
+        flex-direction: column;       /* Строим элементы сверху вниз */
+        align-items: center;          /* Центрируем */
+        gap: 5px;                    /* Отступ между заголовком и меню */
+        padding: 10px;
+  }
+    .headline-text h1 {
+        font-size: 1rem;
+
+    }
+    .headline-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .main-nav{
+        padding: 0;
+    }
+    .nav-list a {
+        font-size: 0.75rem;
+        padding: 8px 10px;
+    }
+    .main-nav .nav-list{
+        gap: 15px;
+    }
+}
+@media (max-width: 780px) {
+    .header-nav {
+        
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .headline-icon {
+        width: 36px;
+        height: 36px;
+    }
+    .headline-text h1 {
+        font-size: 1.3rem;
+    }
+    .headline-text p {
+        font-size: 0.8rem;
+    }
+    .main-nav{
+        display: none;
+    }
+    .mobile-nav{
+        display: none;
+        margin-top: 25px;
+        position: absolute;
+        top: 45px;
+        right: 12px;
+        left: 12px;
+
+        background: rgba(255, 255, 255, 0.15);
+        background-image: linear-gradient(
+                            to bottom,
+                            rgba(0, 224, 56, 0.2) 50%,
+                            rgba(222, 255, 74, 0.3) 100%
+        );
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 20px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15),
+                    inset 0 0 25px rgba(255, 255, 255, 0.3);
+        padding: 1rem;
+        z-index: 100;
+    }
+    .mobile-nav ol{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .mobile-nav a{
+        text-decoration: none; 
+        color: #ffffff;
+        font-weight: 600;
+        padding: .4rem .6rem;
+        border-radius: 20px;
+        display: block;
+        text-align: center;
+        background: linear-gradient(to bottom, #7bef9a 30%, #eeffaa);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-shadow: 0 0 5px rgba(68, 188, 106, 0.9);
+        transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+    .mobile-nav a:hover{
+        background: linear-gradient(145deg, #e6ffb2, #b2ff59);
+        color: #00b11d;
+        font-weight: 700;
+        box-shadow: 0 0 10px #b2ff59;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
+    }
+    .mobile-nav a.active{
+        background: linear-gradient(145deg, #e6ffb2, #b2ff59);
+        color: #00b11d;
+        font-weight: 700;
+        box-shadow: 0 0 10px #b2ff59;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+    }
+    .burger{
+        display: block;
+        border: 10px;
+    }
+    .burger-toggle:checked ~ .mobile-nav{
+        display: block;
+    }
+}
+@media (max-width: 400px){
+    .headline-text{
+        max-width: 180px;
+    }
+    .headline-text h1{
+        font-size: 1rem;
+    }
+    .headline-text p{
+        font-size: 0.7rem;
+    }
+}
+@media (max-width: 230px){
+    .header-nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1px;
+        gap: 0px;
+        
+    }
+    .header-headline {
+        order: 1;                      /* заголовок идёт первым */
+        display: flex;
+        flex-direction: column;        /* иконка и текст — в столбик */
+        align-items: center;           /* выравниваем по центру */
+    }
+    .headline-icon {
+        display: none;
+    }
+    .headline-text h1 {
+        font-size: 0.9rem;
+        text-align: center;
+        padding-bottom: 1px;
+    }
+    .headline-text p {
+        display: none; /* скрываем подзаголовок */
+    }
+    .burger {
+        order: 2;                      
+        position: relative;            
+        top: auto;
+        right: auto;
+        display: block;     
+        padding-top: 16px;
+  }
+
+}

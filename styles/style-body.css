@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    background-image: linear-gradient(
+        to bottom,
+        rgb(211, 232, 240)50%,
+        rgb(168, 220, 241)75%,
+        rgb(128, 210, 239)100%);
+    background-repeat: no-repeat; /*изображение не повторяется*/
+    background-size: cover; /*изображение занимает весь экраны*/
+    background-position: center center; /*позиционирование по центру изображения*/
+    background-attachment: fixed; /*изображение закреплено*/
+    min-height: 100vh; /*занимает всю высоту экрана viewport height*/
+}
