@@ -1,0 +1,95 @@
+section{
+    width: 80%; /*занимает 90% экрана*/
+    min-height: 300px; /*минимальная высота*/
+    margin: 30px auto; /*распологаем по центру, делаем отступ 30пкс между секциями*/
+    padding: 20px; /*внутренний отступ*/
+    border-radius: 20px; /*закругление краев*/
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: /*тень*/
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        0 0 10px rgba(255, 255, 255, 0.6) inset;
+    backdrop-filter: blur(5px); /*блюр фона*/
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    position: relative; /*Создаем контекст для абсолютного позиционирования */
+}
+
+/*КАРТОЧКИ -----------------------------------*/
+#First-card {
+    background-image: 
+    linear-gradient(
+        to bottom,
+        rgba(0, 255, 64, 0.2)50%,
+        rgba(242, 255, 98, 0.5)100%);
+}
+#Second-card {
+    background-image: 
+    linear-gradient(
+        to bottom,
+        rgba(242, 255, 98, 0.5)50%,
+        rgba(242, 255, 98, 0.5)100%);
+}
+#Third-card{
+    background-image: 
+    linear-gradient(
+        to bottom,
+        rgba(242, 255, 98, 0.4)10%,
+        rgba(98, 255, 156, 0.3)100%);
+}
+
+
+/*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
+.decor{
+    /* Размер */
+    width: 100px;
+    height: 100px;
+    
+    /* Позиционирование */
+    position: absolute;
+    z-index: 10;
+}
+.decor.top-left{
+    top: -30px;
+    left: -10px;
+    right: auto;
+    bottom: auto;
+}
+.decor.top-right{
+    top: -30px; 
+    right: -10px;
+}
+.decor.bottom-left{
+    bottom: -25px; /* Привязка к низу */
+    left: -25px;   /* Привязка к левому краю */
+    top: auto;
+    right: auto;
+}
+.decor.bottom-right{
+    bottom: -10px;
+    right: -10px;
+    top: auto;
+    left: auto;
+}
+
+/*Украшения*/
+#clever{
+    background-image: url('../fotos/decor_clever.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#fish{
+    background-image: url('../fotos/fish_lemon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+}
+#blue-flower{
+    background-image: url('../fotos/blue_flower.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#miku{
+    background-image: url('../fotos/miku.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

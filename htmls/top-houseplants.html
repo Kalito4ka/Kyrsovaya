@@ -1,22 +1,51 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <link rel="icon" type="image/png" href="fotos/icon.png">
+        <link rel="icon" type="image/png" href="../fotos/icon.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Домашние растения</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../styles/style-all.css">
+        <link rel="stylesheet" href="../styles/style-header.css">
+        <link rel="stylesheet" href="../styles/style-body.css">
     </head>
     <body>
         <!--Шапка сайта-->
         <header class = "header-nav">
-            <div class = "header-headline">Домашние растения</div>
+            <div class="header-headline">
+                <img src="../fotos/icon.png" alt="Иконка растения" class="headline-icon">
+                <div class="headline-text">
+                    <h1>Домашние растения</h1>
+                    <p>Растения, советы, помощь</p>
+                </div>
+            </div>
+
+            <!-- Бургер Тоггл (Скрытый чекбокс для управления меню) -->
+            <input id="burger-toggle" class="burger-toggle" type="checkbox" aria-hidden="true">
+        
+            <!-- Иконка Бургера -->
+            <label for="burger-toggle" class="burger" aria-hidden="true">
+                <span class="burger-lines"></span>
+            </label>
+
             <nav class = "main-nav">
                 <ul class = "nav-list">
-                    <li><a href = ></li>
+                    <li><a href="main-menu.html">Введение</a></li>
+                    <li><a href="top-houseplants.html" class = "active">Лучшие растения для дома</a></li>
+                    <li><a href="courtship-tips.html">Советы по уходу</a></li>
+                    <li><a href="flower-shop.html">Каталог товаров</a></li>
+                    <li><a href="feed-back.html">Обратная связь</a></li>
                 </ul>
             </nav>
-            
+            <nav class="mobile-nav" aria-label="Мобильная нафигация">
+                <ol>
+                    <li><a href="main-menu.html" onclick="document.getElementById('burger-toggle').checked=false">Введение</a> </li>
+                    <li><a href="top-houseplants.html"  class = "active" onclick="document.getElementById('burger-toggle').checked=false">Лучшие растения для дома</a> </li>
+                    <li><a href="courtship-tips.html" onclick="document.getElementById('burger-toggle').checked=false">Советы по уходу</a> </li>
+                    <li><a href="flower-shop.html" onclick="document.getElementById('burger-toggle').checked=false">Каталог товаров</a> </li>
+                    <li><a href="feed-back.html" onclick="document.getElementById('burger-toggle').checked=false">Обратная связь</a> </li>
+                </ol>
+            </nav>
         </header>
     </body>
 </html>

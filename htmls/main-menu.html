@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../styles/style-all.css">
         <link rel="stylesheet" href="../styles/style-header.css">
         <link rel="stylesheet" href="../styles/style-body.css">
+        <link rel="stylesheet" href="../styles/style-main-menu.css">
     </head>
     <body>
         <!--Шапка сайта-->
@@ -32,8 +33,8 @@
                 <ul class = "nav-list">
                     <li><a href="main-menu.html" class = "active">Введение</a></li>
                     <li><a href="top-houseplants.html">Лучшие растения для дома</a></li>
-                    <li><a href="top-edible.html">Съедобные растения</a></li>
                     <li><a href="courtship-tips.html">Советы по уходу</a></li>
+                    <li><a href="flower-shop.html">Каталог товаров</a></li>
                     <li><a href="feed-back.html">Обратная связь</a></li>
                 </ul>
             </nav>
@@ -41,11 +42,47 @@
                 <ol>
                     <li><a href="main-menu.html" class = "active" onclick="document.getElementById('burger-toggle').checked=false">Введение</a> </li>
                     <li><a href="top-houseplants.html" onclick="document.getElementById('burger-toggle').checked=false">Лучшие растения для дома</a> </li>
-                    <li><a href="top-edible.html" onclick="document.getElementById('burger-toggle').checked=false">Съедобные растения</a> </li>
                     <li><a href="courtship-tips.html" onclick="document.getElementById('burger-toggle').checked=false">Советы по уходу</a> </li>
+                    <li><a href="flower-shop.html" onclick="document.getElementById('burger-toggle').checked=false">Каталог товаров</a> </li>
                     <li><a href="feed-back.html" onclick="document.getElementById('burger-toggle').checked=false">Обратная связь</a> </li>
                 </ol>
             </nav>
         </header>
+
+        <!--УНИКАЛЬНЫЙ КОНТЕНТ СТРАНИЦЫ-->
+        <main>
+            <section id="First-card">
+                <h1>Добро пожаловать!</h1>
+                <p>
+                    Домашние растения — это больше, чем просто элемент декора. Они создают живую связь между человеком и природой, помогают восстановить баланс, очищают воздух и придают помещению ощущение уюта.
+                </p>
+                <p>
+                    Наша главная цель — вдохновить вас стать частью культуры современных цветоводов и показать, что растения могут быть гармоничным элементом даже самого футуристичного интерьера.
+                </p>
+                <p>
+                    Сегодня забота о растениях — это не просто хобби, а способ заботы о себе и окружающем мире. Исследования показывают, что наличие растений в доме:
+                </p>
+                <ul>
+                    <li>снижает уровень стресса и тревожности;</li>
+                    <li>улучшает концентрацию и качество сна;</li>
+                    <li>увлажняет воздух и насыщает его кислородом;</li>
+                    <li>создаёт ощущение естественной свежести и жизни даже в технологичном пространстве.</li>
+                </ul>
+                <!--ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ-->
+                <div class="decor top-right" id="clever"></div>
+                <div class="decor bottom-left" id="fish"></div>
+            </section>
+
+            <section id="Second-card">
+
+                <!--ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ-->
+                <div class="decor top-left" id="blue-flower"></div>
+                <div class="decor bottom-right" id="miku"></div>
+            </section>
+
+            <section id="Third-card">
+
+            </section>
+        </main>
     </body>
 </html>
