@@ -1,5 +1,5 @@
 section{
-    width: 80%; /*занимает 90% экрана*/
+    width: 80%; /*занимает % экрана*/
     min-height: 300px; /*минимальная высота*/
     margin: 30px auto; /*распологаем по центру, делаем отступ 30пкс между секциями*/
     padding: 20px; /*внутренний отступ*/
@@ -15,13 +15,16 @@ section{
 }
 
 /*КАРТОЧКИ -----------------------------------*/
+/*ПЕРВАЯ СЕКЦИЯ*/
 #First-card {
+    margin-top: 50px;
     background-image: 
     linear-gradient(
         to bottom,
-        rgba(0, 255, 64, 0.2)50%,
+        rgba(104, 255, 142, 0.2)50%,
         rgba(242, 255, 98, 0.5)100%);
 }
+/*ВТОРАЯ СЕКЦИЯ*/
 #Second-card {
     background-image: 
     linear-gradient(
@@ -29,6 +32,7 @@ section{
         rgba(242, 255, 98, 0.5)50%,
         rgba(242, 255, 98, 0.5)100%);
 }
+/*ТРЕТЯЯ СЕКЦИЯ*/
 #Third-card{
     background-image: 
     linear-gradient(
@@ -36,8 +40,120 @@ section{
         rgba(242, 255, 98, 0.4)10%,
         rgba(98, 255, 156, 0.3)100%);
 }
+/*ОФОРМЛЕНИЕ ТЕКСТА*/
+h2, h3{
+    color: #00793b;
+    margin-bottom: 15px;
+}
+/* Общий стиль для текста в секции */
+p,
+ul {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(0, 224, 131, 0.7);
+}
 
+/* Выделение ключевых фраз */
+.highlight {
+    font-weight: 700;
+    color: #00b256; /* Насыщенный зеленый */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
 
+/* Оформление списка преимуществ */
+.benefits h2 {
+    color: #00793b;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.benefits ul {
+    list-style: none; /* Убираем стандартные маркеры */
+    padding-left: 0;
+}
+.benefits ul li {
+    margin-bottom: 8px;
+    padding-left: 25px; /* Отступ для кастомного маркера */
+    position: relative;
+}
+.benefits h2::before{
+    content:'🌱';
+}
+.benefits ul li::before {
+    content: '✅'; /* Кастомный маркер */
+    position: absolute;
+    left: 0;
+    font-size: 0.9em;
+}
+
+/* Цитата/выделенный текст */
+blockquote {
+    border-left: 5px solid rgba(0, 121, 59, 0.7);
+    color:#00a84f;
+    padding: 10px 20px;
+    margin: 20px 0;
+    font-style: italic;
+    background-color: rgba(255, 255, 255, 0.3); /* Легкий фон */
+    border-radius: 10px;
+}
+.air-quality-meter p{
+    color: #00793b;
+    text-shadow: none;
+    margin-bottom: 0;
+}
+blockquote::before{
+    content: '🌿';
+}
+/* ДИНАМИЧЕСКИЙ СЧЕТЧИК */
+
+.air-quality-meter {
+    /* Стиль блока счетчика */
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Более светлый гласморфизм */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px); /* Усиленный блюр */
+    
+    /* Флекс-контейнер для расположения элементов */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.meter-display {
+    margin-top: 10px;
+}
+
+.counter-value {
+    /* Стиль самого числа */
+    font-size: 3em;
+    font-weight: 900;
+    color: #00a84f; /* Яркий, заметный цвет */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+.meter-label {
+    /* Подпись */
+    font-size: 1.1em;
+    color: #2a894151;
+    font-weight: 500;
+    display: block;
+    margin-top: -5px;
+}
+#scroll-trigger {
+    height: 1px; /* Минимальная высота */
+    width: 100%;
+    /* display: none; - Не использовать, так как наблюдатель может его не увидеть */
+    visibility: hidden; /* Делаем невидимым */
+    margin-top: 50px; /* Даем небольшой отступ от последнего элемента */
+}
 /*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
 .decor{
     /* Размер */
@@ -92,4 +208,9 @@ section{
     background-image: url('../fotos/miku.png');
     background-size: contain;
     background-repeat: no-repeat;
+}
+@media(max-width: 780px){
+    #First-card{
+        margin-top: 0px;
+    }
 }
