@@ -248,7 +248,7 @@ blockquote::before{
 .tc-slide {
     flex: 0 0 calc((100% - 40px) / 3); 
     width: calc((100% - 40px) / 3); 
-    border-radius: 15px;
+
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -260,7 +260,6 @@ blockquote::before{
     width: 100%;
     height: min(320px, 100vw);
     max-height: 320px;         /* ограничиваем высоту */
-    border-radius: 12px;
     overflow: hidden;          /* скрываем лишнее, crop изображения */
     background-color: #0a0f0a; /* плейсхолдер при загрузке */
 }
@@ -347,7 +346,6 @@ blockquote::before{
 .tc-controls button[aria-selected="true"] {
     background: #9BF0B3;
     transform: scale(1.25);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.45);
 }
 /*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
 .decor{
@@ -476,18 +474,25 @@ aside .decor.top-right{
         flex: 0 0 100%;
         width: 100%;
     }
-}
-@media(max-width: 660px){
-    .tc-img-box{
-        width: 90%;
+    .timeline-carousel .tc-slides{
+        gap: 4%;
     }
 }
-@media(max-width: 540px){
-    .tc-img-box{
-        width: 80%;
+
+@media(max-width: 700px){
+    .timeline-carousel .tc-slides{
+        gap: 2.555555%;
     }
 }
-@media (max-width: 400px) {
+@media(max-width: 500px){
+    .timeline-carousel .tc-slides{
+        gap: 3.333333333333%;
+    }
+}
+@media(max-width: 410px){
+    .timeline-carousel .tc-slides{
+        gap: 4.333333333333%;
+    }
     .second-section h2 {
         font-size: 1.5rem;
     }
@@ -500,9 +505,21 @@ aside .decor.top-right{
     .timeline-carousel .tc-overlay p {
         font-size: 0.85rem;
     }
-}
-@media(max-width: 320px){
-    .tc-img-box{
-        width: 70%;
+    .decor{
+        width: 50px;
+        height: 50px;
+    }
+    .decor.top-right{
+        top: -15px; 
+        right: 0px;
+    }
+    aside .decor.top-right{
+        right: -5px;
     }
 }
+@media(max-width: 320px){
+    .timeline-carousel .tc-slides{
+        gap: 5.333333333333%;
+    }
+}
+
