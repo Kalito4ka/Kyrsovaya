@@ -1,8 +1,12 @@
 body{
-    display: flex;
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    gap: 1rem;
     flex-direction: column;
     align-items: center;
     padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
     background-image: linear-gradient(
         to bottom,
         rgb(211, 232, 240)50%,
@@ -13,4 +17,13 @@ body{
     background-position: center center; /*позиционирование по центру изображения*/
     background-attachment: fixed; /*изображение закреплено*/
     min-height: 100vh; /*занимает всю высоту экрана viewport height*/
+}
+@media (max-width: 780px) {
+    body {
+        /* При маленьком экране боковая панель располагается под основным контентом */
+        grid-template-columns: 1fr;
+        gap: 0rem; /* Уменьшим отступ */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }

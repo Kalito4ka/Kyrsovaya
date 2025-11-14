@@ -92,18 +92,92 @@
             </section>
 
             <section id="Second-card">
+                <h3>История домашних растений</h3>
+                <div class="timeline-carousel" aria-roledescription="carousel">
+                    <button class="tc-btn tc-prev" aria-label="Предыдущая эпоха">←</button>
+                    <div class="tc-viewport">
+                        <ul class="tc-slides" role="list">
+                            <!--СЛАЙД 1-->
+                            <li class="tc-slide" role="group" aria-roledescription="slide" aria-label="Древний Египет — ок. 2000 до н.э." data-index="0">
+                                <div class="tc-img-box" aria-hidden="false">
+                                    <img class="tc-bg" src="../fotos/timeline-egypt.png" alt="" loading="lazy" />
+                                    <div class="tc-overlay">
+                                        <h3>Древний Египет (≈ 2000 до н.э.)</h3>
+                                        <p>Египтяне создавали внутренние сады с лотосами и пальмами — зелёные уголки в домах и дворцах. Растения использовали как декоративный и символический элемент.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <!--СЛАЙД 2-->
+                            <li class="tc-slide" role="group" aria-roledescription="slide" aria-label="Античность — Греция и Рим" data-index="1">
+                                <div class="tc-img-box" aria-hidden="false">
+                                    <img class="tc-bg" src="../fotos/timeline-antiquity.png" alt="" loading="lazy" />
+                                    <div class="tc-overlay">
+                                        <h3>Античность — Греция и Рим</h3>
+                                        <p>Растения в домах знати символизировали достаток и покой: лавровые венки, мирт и плющ украшали интерьеры.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <!--СЛАЙД 3-->
+                            <li class="tc-slide" role="group" aria-roledescription="slide" aria-label="Средневековье — монастырские оранжереи" data-index="1">
+                                <div class="tc-img-box" aria-hidden="false">
+                                    <img class="tc-bg" src="../fotos/timeline-medieval.png" alt="" loading="lazy" />
+                                    <div class="tc-overlay">
+                                        <h3>Средневековье</h3>
+                                        <p>Монастыри содержали оранжереи и аптекарские сады — растения выращивали для медицины и приготовления лечебных настоев.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- СЛАЙД 4 -->
+                            <li class="tc-slide" role="group" aria-roledescription="slide" aria-label="XVII–XIX века — эпоха стеклянных теплиц" data-index="3">
+                                <div class="tc-img-box" aria-hidden="false">
+                                    <img class="tc-bg" src="../fotos/timeline-victorian.png" alt="" loading="lazy" />
+                                    <div class="tc-overlay">
+                                        <h3>XVII–XIX века</h3>
+                                        <p>Расцвет тепличного дела: стеклянные оранжереи позволили выращивать экзотические растения в северных широтах и сделали комнатное цветоводство массовым.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- СЛАЙД 5 -->
+                            <li class="tc-slide" role="group" aria-roledescription="slide" aria-label="XX век и XXI век — урбанизация и биофилия" data-index="4">
+                                <div class="tc-img-box" aria-hidden="false">
+                                    <img class="tc-bg" src="../fotos/timeline-modern.png" alt="" loading="lazy" />
+                                    <div class="tc-overlay">
+                                        <h3>XX–XXI века</h3>
+                                        <p>Пластиковые горшки, фитолампы и умные горшки сделали выращивание растений доступным в городской квартире. Современный тренд — интеграция зелени в архитектуру и дизайн.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tc-controls" role="tablist" aria-label="Навигация по эпохам"></div>
 
+                    <button class="tc-btn tc-next" aria-label="Следующая эпоха">→</button>
+                    </div>
+                </div>
                 <!--ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ-->
                 <div class="decor top-left" id="blue-flower"></div>
                 <div class="decor bottom-right" id="miku"></div>
             </section>
-
+            <!--БОКОВАЯ ПАНЕЛЬ-->
             <section id="Third-card">
 
             </section>
             <div id="scroll-trigger"></div>
         </main>
-
+        <!--БОКОВАЯ ПАНЕЛЬ-->
+        <aside>
+            <h3>Полезные советы!</h3>
+            <p>Регулярно протирайте листья растений от пыли - это улучшает их дыхание и фотосинтез.</p>
+            <p>Не переливайте растения! Большинство комнатных растений погибает от избыточного полива.</p>
+            <p>Раз в месяц поворачивайте горшок на 45 градусов для равномерного роста.</p>
+            <div id="daily-fact-widget">
+                <h3>Факт дня</h3>
+                <p class="fact-text" id="daily-fact-content">Загрузка...</p>
+            </div>
+            <div class="decor top-right" id="butterfly"></div>
+        </aside>
         <script src="../scripts/script-first-card.js"></script>
+        <script src="../scripts/script-caruosel.js"></script>
+        <script src="../scripts/script-aside.js"></script>
     </body>
 </html>
