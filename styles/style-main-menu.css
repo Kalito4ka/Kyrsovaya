@@ -1,38 +1,5 @@
 /*файл style-main-menu.css*/
 /*БОКОВАЯ ПАНЕЛЬ*/
-main{
-    display: grid; /*макет из двух колонок. */
-    grid-template-columns: 3fr 1fr; /* Задает колонки: первая (основной контент) в 2 раза шире второй (сайдбар). */
-}
-aside{
-    grid-column: 2;
-    position: sticky;
-    top: 150px;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        0 0 10px rgba(255, 255, 255, 0.6) inset;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    
-    /* Дополнительные стили */
-    height: fit-content;
-    align-self: start;
-}
-/* Стилизация заголовков и текста внутри aside */
-aside h3 {
-    color: #0f512f;
-    margin-bottom: 10px;
-    border-bottom: 2px solid rgba(0, 121, 59, 0.2);
-    padding-bottom: 5px;
-}
-aside p {
-    color: #007f11;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
 
 /*стили для виджета "Факт дня" */
 #daily-fact-widget {
@@ -58,23 +25,6 @@ aside p {
     color: #00411f;
     font-weight: 500;
 }
-section{
-    grid-column: 1;
-    width: 95%; /*занимает % экрана*/
-    min-height: 300px; /*минимальная высота*/
-    margin: 30px auto; /*распологаем по центру, делаем отступ 30пкс между секциями*/
-    padding: 20px; /*внутренний отступ*/
-    border-radius: 20px; /*закругление краев*/
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: /*тень*/
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        0 0 10px rgba(255, 255, 255, 0.6) inset;
-    backdrop-filter: blur(5px); /*блюр фона*/
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    position: relative; /*Создаем контекст для абсолютного позиционирования */
-}
-
 /*КАРТОЧКИ -----------------------------------*/
 /*ПЕРВАЯ СЕКЦИЯ*/
 #First-card {
@@ -100,25 +50,6 @@ section{
         to bottom,
         rgba(242, 255, 98, 0.4)10%,
         rgba(98, 255, 156, 0.3)100%);
-}
-/*ОФОРМЛЕНИЕ ТЕКСТА*/
-h2, h3{
-    color: #0f512f;
-    margin-bottom: 15px;
-}
-/* Общий стиль для текста в секции */
-p,
-ul {
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #007f11;
-}
-
-/* Выделение ключевых фраз */
-.highlight {
-    font-weight: 700;
-    color: #00833f; /* Насыщенный зеленый */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
 /* Оформление списка преимуществ */
@@ -226,14 +157,14 @@ blockquote::before{
     align-items: center;
     gap: 12px;
 }
-/* 5) Поведение при наведении — лёгкий зум картинки (опционально) */
+/*Поведение при наведении — лёгкий зум картинки (опционально) */
 .tc-img-box:hover .tc-bg {
   transform: scale(1.03);
 }
 .tc-viewport {
     overflow: hidden;
     flex: 1 1 auto;
-    min-height: 400px;      /* уменьшили высоту области слайда */
+    min-height: 400px;
     max-height: 700px;
 }
 
@@ -267,12 +198,12 @@ blockquote::before{
 }
 /* Фоновое изображение — cover */
 .tc-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;         /* кадрирование без искажений */
-  display: block;
-  transform-origin: center center;
-  transition: transform 600ms cubic-bezier(.22,.9,.3,1);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* кадрирование без искажений */
+    display: block;
+    transform-origin: center center;
+    transition: transform 600ms cubic-bezier(.22,.9,.3,1);
 }
 
 
@@ -298,7 +229,7 @@ blockquote::before{
     color: #D8F8DF; 
 }
 .tc-overlay p  { 
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-size: 0.9rem; 
     color: rgba(230,247,239,0.95); 
     line-height: 1.4; 
@@ -307,17 +238,17 @@ blockquote::before{
 
 /* Навигационные стрелки */
 .tc-btn {
-  background: linear-gradient(180deg, rgba(37,160,78,0.14), rgba(37,160,78,0.08));
-  border: 1px solid rgba(37,160,78,0.25);
-  color: #eaffef;                /* светлый текст на зелёной кнопке */
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  display: inline-grid;
-  place-items: center;
-  cursor: pointer;
-  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms;
-  box-shadow: 0 4px 14px rgba(10,50,20,0.25);
+    background: linear-gradient(180deg, rgba(37,160,78,0.14), rgba(37,160,78,0.08));
+    border: 1px solid rgba(37,160,78,0.25);
+    color: #eaffef;                /* светлый текст на зелёной кнопке */
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms;
+    box-shadow: 0 4px 14px rgba(10,50,20,0.25);
 }
 .tc-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.55); }
 .tc-btn:active { transform: translateY(0); }
@@ -388,97 +319,8 @@ blockquote::before{
         margin: 0 auto 20px auto;
     }
 }
-/*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
-.decor{
-    /* Размер */
-    width: 85px;
-    height: 85px;
-    
-    /* Позиционирование */
-    position: absolute;
-    z-index: 10;
-}
-.decor.top-left{
-    top: -35px;
-    left: -25px;
-    right: auto;
-    bottom: auto;
-}
-.decor.top-right{
-    top: -35px; 
-    right: -15px;
-}
-aside .decor.top-right{
-    top: -25px; 
-    right: -25px;
-}
-.decor.bottom-left{
-    bottom: -25px; /* Привязка к низу */
-    left: -35px;   /* Привязка к левому краю */
-    top: auto;
-    right: auto;
-}
-.decor.bottom-right{
-    bottom: -10px;
-    right: -10px;
-    top: auto;
-    left: auto;
-}
 
-/*Украшения*/
-#clever{
-    background-image: url('../fotos/decor_clever.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-#fish{
-    background-image: url('../fotos/fish_lemon.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: rotate(90deg);
-}
-#blue-flower{
-    background-image: url('../fotos/blue_flower.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-#miku{
-    background-image: url('../fotos/miku.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-#butterfly{
-    background-image: url('../fotos/butterfly.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
 @media(max-width: 1220px){
-    .decor{
-        width: 70px;
-        height: 70px;
-    }
-    .decor.top-left{
-        top: -25px;
-        left: -15px;
-        right: auto;
-        bottom: auto;
-    }
-    .decor.top-right{
-        top: -25px; 
-        right: -5px;
-    }
-    .decor.bottom-left{
-        bottom: -15px; /* Привязка к низу */
-        left: -20px;   /* Привязка к левому краю */
-        top: auto;
-        right: auto;
-    }
-    .decor.bottom-right{
-        bottom: -5px;
-        right: -5px;
-        top: auto;
-        left: auto;
-    }
     .timeline-carousel .tc-slide {
         /* 2 видимых слайда: (100% - 1*20px gap) / 2 */
         flex: 0 0 calc((100% - 20px) / 2);
@@ -486,28 +328,8 @@ aside .decor.top-right{
     }
 }
 @media(max-width: 780px){
-    h2, h3{
-        font-size: 1.2rem;
-    }
-    /* Общий стиль для текста в секции */
-    p,
-    ul {
-        line-height: 1.3;
-        font-size: 0.9rem;
-    }
-    blockquote{
-        font-size: 0.9rem;
-    }
     #First-card{
         margin-top: 0px;
-    }
-    aside {
-        /* При маленьком экране aside не липкий и занимает всю ширину */
-        position: static; 
-        grid-column: 1; /* Перемещаем aside в единственную колонку */
-        width: 95%; /* Почти полная ширина */
-        margin: 20px auto;
-        top: auto;
     }
 
     .timeline-carousel .tc-slide {
@@ -517,9 +339,6 @@ aside .decor.top-right{
     }
     .timeline-carousel .tc-slides{
         gap: 4%;
-    }
-    main{
-        grid-template-columns: 1fr;
     }
 }
 
@@ -548,17 +367,6 @@ aside .decor.top-right{
     }
     .timeline-carousel .tc-overlay p {
         font-size: 0.85rem;
-    }
-    .decor{
-        width: 50px;
-        height: 50px;
-    }
-    .decor.top-right{
-        top: -15px; 
-        right: 0px;
-    }
-    aside .decor.top-right{
-        right: -5px;
     }
 }
 @media(max-width: 320px){

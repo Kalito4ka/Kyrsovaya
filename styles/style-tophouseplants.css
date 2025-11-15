@@ -1,0 +1,147 @@
+/* ----- Новички — карточки ----- */
+.cards-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:10px;
+}
+
+/* Карточка — flip */
+.card {
+    perspective: 1200px;
+    min-height: 325px;
+}
+.card-inner {
+    position:relative;
+    width:100%;
+    height:100%;
+    transition: transform 700ms cubic-bezier(0.2,0.9,0.22,1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.card.flipped .card-inner { 
+    transform: rotateY(180deg); 
+}
+
+.card-face{
+    position:absolute;inset:0;
+    border-radius:15px;
+    overflow:hidden;
+    backface-visibility:hidden;
+    box-shadow: 0 4px 15px rgba(9, 30, 12, 0.2);
+}
+
+.card-front img {
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-body{
+    padding:14px;
+    display:flex;
+    flex-direction: column;
+    gap:4px;
+}
+.plant-name{
+    font-weight:700;
+    color: #1f7f4e;
+    font-size:1.05rem
+}
+.tags{
+    display:flex;
+    color:#308e5c;
+    flex-wrap:wrap;
+    gap: 4px;
+}
+.tag{
+    font-size:.78rem;
+    padding:6px 8px;
+    border-radius:999px;
+    background-color: rgba(0, 171, 20, 0.152);
+}
+
+/* back face */
+.card-back{
+    transform: rotateY(180deg);
+    padding:16px;
+    background: rgba(255, 255, 255, 0.15);
+    background-image: 
+    linear-gradient(
+        to bottom,
+        rgba(2, 174, 45, 0.6)50%,
+        rgba(222, 255, 74, 0.6)100%);
+    backdrop-filter: blur(18px);
+}
+.card-back h4{
+    margin:0 0 8px;
+    color: #ffffff;
+}
+.card-back ul{
+    margin:0;
+    padding-left:1.1rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px rgb(6, 117, 76);
+    margin-bottom: 8px;
+}
+.card-actions{
+    margin-top:auto;
+    display:flex;
+    gap:10px;
+    align-items:center;
+    justify-content:space-between
+}
+.btn {
+    background: linear-gradient(180deg, #39e38e, #2dbd73);
+    color: #eaffef;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(17,60,30,0.3);
+
+    transition: 
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+/* favorite icon */
+.fav {
+    display:inline-grid;
+    place-items:center;
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:linear-gradient( #39e38e, #2dbd73);
+    color:#006d2a;
+    font-size: 1.5rem;
+    cursor:pointer;
+    border:none;
+}
+.fav.active{
+    color:#ff9625;
+    background:linear-gradient( #e9ff40, #fff425);
+    font-size: 1.5rem;
+    border:none;
+}
+@media (max-width: 1220px){
+    .cards-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+@media (max-width: 780px){
+    .card {
+        perspective: 1200px;
+        min-height: 300px;
+    }
+    .cards-grid{
+        grid-template-columns: 1fr;
+    }
+}

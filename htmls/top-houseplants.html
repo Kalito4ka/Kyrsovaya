@@ -7,7 +7,10 @@
         <title>Домашние растения</title>
         <link rel="stylesheet" href="../styles/style-all.css">
         <link rel="stylesheet" href="../styles/style-header.css">
+        <link rel="stylesheet" href="../styles/style-page.css">
         <link rel="stylesheet" href="../styles/style-body.css">
+        <link rel="stylesheet" href="../styles/style-tophouseplants.css">
+        <link rel="stylesheet" href="../styles/style-footer.css">
     </head>
     <body>
         <!--Шапка сайта-->
@@ -47,5 +50,199 @@
                 </ol>
             </nav>
         </header>
+        <main>
+            <section class="section" aria-labelledby="novice-title">
+                <h2>Для новичка — самые неприхотливые</h2>
+                <div class="cards-grid" id="novice-cards">
+                    <!-- Карточки: замените src на свои изображения (путь примера: /assets/img/<name>.jpg) -->
+                    <!-- 1 -->
+                    <article class="card" data-id="sansevieria" tabindex="0" aria-label="Сансевиерия — карточка">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <img src="../fotos/sansevieria.png" alt="Сансевиерия" onerror="this.style.opacity=0.6">
+                                <div class="card-body">
+                                    <div class="plant-name">Сансевиерия</div>
+                                    <div class="tags">
+                                        <span class="tag">Неприхотливо</span>
+                                        <span class="tag">Теневыносливо</span>
+                                    </div>
+                                    <p>Переживёт редкий полив и умеренное освещение.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-face card-back">
+                                <h4>Как ухаживать</h4>
+                                <ul>
+                                    <li>Полив: 1 раз в 2–4 недели.</li>
+                                    <li>Свет: рассеянный, можно полутень.</li>
+                                    <li>Температура: +15…+28°C. Не любит переувлажнения.</li>
+                                </ul>
+                                <div class="card-actions">
+                                    <a class="btn add-more" href="feed-back.html#consultation">Подробнее</a>
+                                    <button class="fav" aria-pressed="false" title="Добавить в избранное">★</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2 -->
+                    <article class="card" data-id="zz" tabindex="0" aria-label="Замиокулькас — карточка">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <img src="../fotos/zz.png" alt="Замиокулькас" onerror="this.style.opacity=0.6">
+                                <div class="card-body">
+                                    <div class="plant-name">Замиокулькас</div>
+                                    <div class="tags"><span class="tag">Выносливый</span><span class="tag">Медленный рост</span></div>
+                                    <p>Нуждается в редком поливе и терпит недостаток света.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-face card-back">
+                                <h4>Как ухаживать</h4>
+                                <ul>
+                                    <li>Полив: 1 раз в 2–3 недели.</li>
+                                    <li>Свет: яркий рассеянный или полутень.</li>
+                                    <li>Температура: +18…+26°C.</li>
+                                </ul>
+                                <div class="card-actions">
+                                    <a class="btn add-more" href="feed-back.html#consultation">Подробнее</a>
+                                    <button class="fav" aria-pressed="false" title="Добавить в избранное">★</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3 -->
+                    <article class="card" data-id="chlorophytum" tabindex="0" aria-label="Хлорофитум — карточка">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <img src="../fotos/chlorophytum.png" alt="Хлорофитум" onerror="this.style.opacity=0.6">
+                                <div class="card-body">
+                                    <div class="plant-name">Хлорофитум</div>
+                                    <div class="tags"><span class="tag">Быстрый рост</span><span class="tag">Очищает воздух</span></div>
+                                    <p>Простой в уходе, любит влажность и светлые места.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-face card-back">
+                                <h4>Как ухаживать</h4>
+                                <ul>
+                                    <li>Полив: умеренный, не допускать пересыхания.</li>
+                                    <li>Свет: яркий рассеянный свет.</li>
+                                    <li>Температура: +16…+24°C.</li>
+                                </ul>
+                                <div class="card-actions">
+                                    <a class="btn add-more" href="feed-back.html#consultation">Подробнее</a>
+                                    <button class="fav" aria-pressed="false" title="Добавить в избранное">★</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- 4 -->
+                    <article class="card" data-id="pothos" tabindex="0" aria-label="Эпипремнум — карточка">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                            <img src="../fotos/pothos.png" alt="Эпипремнум" onerror="this.style.opacity=0.6">
+                                <div class="card-body">
+                                    <div class="plant-name">Эпипремнум</div>
+                                    <div class="tags"><span class="tag">Лиана</span><span class="tag">Теневынослив</span></div>
+                                    <p>Пользуется популярностью за простоту размножения и ухода.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-face card-back">
+                                <h4>Как ухаживать</h4>
+                                <ul>
+                                    <li>Полив: умеренно, любит влажную почву.</li>
+                                    <li>Свет: рассеянный, допрямого солнца.</li>
+                                    <li>Температура: +16…+26°C.</li>
+                                </ul>
+                                <div class="card-actions">
+                                    <a class="btn add-more" href="feed-back.html#consultation">Подробнее</a>
+                                    <button class="fav" aria-pressed="false" title="Добавить в избранное">★</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5 -->
+                    <article class="card" data-id="peperomia" tabindex="0" aria-label="Пеперомия — карточка">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <img src="../fotos/peperomia.png" alt="Пеперомия" onerror="this.style.opacity=0.6">
+                                <div class="card-body">
+                                    <div class="plant-name">Пеперомия</div>
+                                    <div class="tags"><span class="tag">Компактная</span><span class="tag">Декоративная</span></div>
+                                    <p>Хороша для полок и столов — не занимает много места.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-face card-back">
+                                <h4>Как ухаживать</h4>
+                                <ul>
+                                    <li>Полив: умеренный, не заливать.</li>
+                                    <li>Свет: яркий рассеянный свет.</li>
+                                    <li>Температура: +16…+24°C.</li>
+                                </ul>
+                                <div class="card-actions">
+                                    <a class="btn add-more" href="feed-back.html#consultation">Подробнее</a>
+                                    <button class="fav" aria-pressed="false" title="Добавить в избранное">★</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6 -->
+                    <article class="card" data-id="spathiphyllum" tabindex="0" aria-label="Спатифиллум — карточка">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <img src="../fotos/spathiphyllum.png" alt="Спатифиллум" onerror="this.style.opacity=0.6">
+                                <div class="card-body">
+                                    <div class="plant-name">Спатифиллум</div>
+                                    <div class="tags"><span class="tag">Цветущее</span><span class="tag">Чувствительное</span></div>
+                                    <p>Прекрасно очищает воздух, любит влажность.</p>
+                                </div>
+                            </div>
+
+                            <div class="card-face card-back">
+                                <h4>Как ухаживать</h4>
+                                <ul>
+                                    <li>Полив: регулярный, любит влагу.</li>
+                                    <li>Свет: рассеянный, не прямой.</li>
+                                    <li>Температура: +18…+26°C.</li>
+                                </ul>
+                                <div class="card-actions">
+                                    <a class="btn add-more" href="feed-back.html#consultation">Подробнее</a>
+                                    <button class="fav" aria-pressed="false" title="Добавить в избранное">★</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Контакты</h3>
+                    <address>
+                        Для консультации по выбору растений обращайтесь:<br>
+                        Телефон: <a href="tel:+79005657484">+7 (900) 565-74-84</a><br>
+                        Email: <a href="mailto:flowers@gmail.com">flowers@gmail.com</a><br>
+                        Адрес: г. Москва, ул. Цветочная, д. 15
+                    </address>
+                </div>
+                <div class="developer-info">
+                    <h3>Разработчик сайта</h3>
+                    <p>Сайт разработан студентом курса ИИТ</p>
+                    <p>© 2025 Все права защищены</p>
+                </div>
+                <div class="map-info">
+                    <h3>Мы на карте:</h3>
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aefd4e6e3d1c07147cda3b42174d35b2e93621fa20617ff8440b8eafa82c783c8&amp;source=constructor" width="100%" height="200" frameborder="0"></iframe>
+                </div>
+            </div>
+        </footer>
+        <script src="../scripts/script-flowersfornew.js"></script>
     </body>
 </html>
