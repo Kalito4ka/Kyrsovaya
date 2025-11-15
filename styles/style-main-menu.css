@@ -1,7 +1,8 @@
 /*файл style-main-menu.css*/
 /*БОКОВАЯ ПАНЕЛЬ*/
 main{
-    grid-column: 1;
+    display: grid; /*макет из двух колонок. */
+    grid-template-columns: 3fr 1fr; /* Задает колонки: первая (основной контент) в 2 раза шире второй (сайдбар). */
 }
 aside{
     grid-column: 2;
@@ -58,6 +59,7 @@ aside p {
     font-weight: 500;
 }
 section{
+    grid-column: 1;
     width: 95%; /*занимает % экрана*/
     min-height: 300px; /*минимальная высота*/
     margin: 30px auto; /*распологаем по центру, делаем отступ 30пкс между секциями*/
@@ -347,6 +349,47 @@ blockquote::before{
     background: #9BF0B3;
     transform: scale(1.25);
 }
+/*ТРЕТЯЯ СЕКЦИЯ*/
+/* Общий блок */
+.care-philosophies {
+    max-width: 1100px;
+    margin: 60px auto;
+    color: #007200;
+}
+/* Каждый философский блок */
+.cp-block {
+    overflow: auto; /* чтобы контейнер учитывал float-картинки */
+    border-bottom: 1px solid rgba(140,255,180,0.15);
+}
+/* Картинки */
+.cp-img {
+    width: 150px;
+    height: auto;
+    border-radius: 14px;
+    margin: 0 22px 14px 0;
+    box-shadow: 8px 8px 14px rgba(0,0,0,0.1);
+}
+
+/* Влево */
+.cp-left {
+    float: left;
+}
+
+/* Вправо */
+.cp-right {
+    float: right;
+}
+
+/* Адаптив — на телефонах картинки сверху */
+@media (max-width: 700px) {
+    .cp-img {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        width: 80%;
+        height: 50%;
+    }
+}
 /*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
 .decor{
     /* Размер */
@@ -476,6 +519,9 @@ aside .decor.top-right{
     }
     .timeline-carousel .tc-slides{
         gap: 4%;
+    }
+    main{
+        grid-template-columns: 1fr;
     }
 }
 

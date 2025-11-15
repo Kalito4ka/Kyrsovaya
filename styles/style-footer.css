@@ -1,0 +1,107 @@
+/* ========== БАЗОВЫЙ FOOTER (твой исходник с небольшими правками) ========== */
+footer {
+  width: 100%;
+  padding: 2rem;
+  margin-top: 2rem; /* отступ между блоками */
+  grid-column: 1 / -1;
+  background: rgba(255, 255, 255, 0.15);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(86, 255, 128, 0.3) 50%,
+    rgba(232, 255, 132, 0.5) 100%
+  );
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  color: #073b1a;
+}
+
+/* Контент футера: 2 колонки на десктопе */
+.footer-content {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1100px; /* ограничение ширины */
+  align-items: start;
+}
+
+/* Если внутри .footer-content у тебя блоки, можно явно оформить */
+.footer-column {
+  /* полезно, если хочешь выравнивать содержимое внутри колонки */
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Ссылки и прочие элементы */
+footer a {
+  color: #007f11;
+  text-decoration: none;
+  display: inline-block;       /* помогает увеличить кликабельную зону */
+  padding: 4px 0;
+}
+footer a:hover,
+footer a:focus {
+  color: rgb(81, 175, 30);
+  outline: none;
+  text-decoration: underline;
+}
+
+footer p,
+footer small {
+  color: #007f11;
+  margin: 0;
+  line-height: 1.4;
+}
+
+address {
+  color: #007f11;
+  font-style: normal;
+  margin-top: 1rem;
+}
+
+/* ========== АДАПТИВ: мобильная версия — одна колонка ========== */
+@media (max-width: 780px) {
+  footer {
+    padding: 1.25rem;          /* чуть меньше внутренний отступ на телефоне */
+    border-radius: 14px;
+  }
+
+  /* Меняем сетку на одну колонку, центрируем содержимое */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;     /* центрируем колонки по горизонтали */
+    text-align: center;        /* текст по центру — хорошо смотрится на мобильных */
+  }
+
+  /* Колонки становятся блоками, выравниваем по центру */
+  .footer-column {
+    width: 100%;
+    max-width: 560px;          /* ограничение, чтобы строки не были слишком широкими */
+    align-items: center;       /* центрируем элементы внутри колонки */
+  }
+
+  /* Сделаем ссылки чуть легче воспринимаемыми и удобными для касания */
+  footer a {
+    padding: 8px 6px;          /* увеличенная зона для тапа */
+    font-size: 1rem;
+  }
+
+  address {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Дополнительно: если хочешь, чтобы на очень узких экранах все было компактнее */
+@media (max-width: 420px) {
+  footer {
+    padding: 1rem;
+  }
+  .footer-content { gap: 0.75rem; }
+  .footer-column { max-width: 100%; padding: 0 6px; }
+  footer a { font-size: 0.98rem; padding: 6px 4px; }
+}

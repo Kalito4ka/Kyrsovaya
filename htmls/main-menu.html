@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="../styles/style-header.css">
         <link rel="stylesheet" href="../styles/style-body.css">
         <link rel="stylesheet" href="../styles/style-main-menu.css">
+        <link rel="stylesheet" href="../styles/style-footer.css">
     </head>
     <body>
         <!--Шапка сайта-->
@@ -51,6 +52,7 @@
 
         <!--УНИКАЛЬНЫЙ КОНТЕНТ СТРАНИЦЫ-->
         <main>
+            
             <section id="First-card">
                 <h2>Добро пожаловать!</h2>
                 <div class="glass-content">
@@ -90,7 +92,18 @@
                 <div class="decor top-right" id="clever"></div>
                 <div class="decor bottom-left" id="fish"></div>
             </section>
-
+            <!--БОКОВАЯ ПАНЕЛЬ-->
+            <aside>
+                <h3>Полезные советы!</h3>
+                <p>Регулярно протирайте листья растений от пыли - это улучшает их дыхание и фотосинтез.</p>
+                <p>Не переливайте растения! Большинство комнатных растений погибает от избыточного полива.</p>
+                <p>Раз в месяц поворачивайте горшок на 45 градусов для равномерного роста.</p>
+                <div id="daily-fact-widget">
+                    <h3>Факт дня</h3>
+                    <p class="fact-text" id="daily-fact-content">Загрузка...</p>
+                </div>
+                <div class="decor top-right" id="butterfly"></div>
+            </aside>
             <section id="Second-card">
                 <h3>История домашних растений</h3>
                 <div class="timeline-carousel" aria-roledescription="carousel">
@@ -158,24 +171,69 @@
                 <div class="decor top-left" id="blue-flower"></div>
                 <div class="decor bottom-right" id="miku"></div>
             </section>
-            <!--БОКОВАЯ ПАНЕЛЬ-->
             <section id="Third-card">
+                <h2>Хочешь окунуться в мир растений?<br>Тогда время решить, какой философии ухода ты будешь придерживаться!</h2>
 
+                <!-- Минимализм -->
+                <article class="cp-block">
+                    <img src="../fotos/minimalism.png" alt="Минималистичный стиль" class="cp-img cp-left">
+                    <h3>Минимализм — «Меньше, но лучше»</h3>
+                    <p>
+                        Минимализм — это про спокойствие, чистые линии и отсутствие визуального шума.
+                        Здесь растения становятся точечными акцентами, а не зелёными зарослями.
+                        Подходит занятым людям и тем, кто любит порядок. Важные принципы — немного растений,
+                        простые формы, однотонные горшки и лёгкий уход.
+                    </p>
+                </article>
+
+                <!-- Биофилия -->
+                <article class="cp-block">
+                    <img src="../fotos/biophilia.png" alt="Биофильный стиль" class="cp-img cp-right">
+                    <h3>Биофилия — «Единство с природой»</h3>
+                    <p>
+                        Биофильный подход стремится воссоздать природную экосистему дома. Натуральные материалы,
+                        мягкий свет, растения по совместимости — всё про гармонию человека и природы.
+                        Дом превращается в уютный зелёный оазис, тёплый и живой.
+                    </p>
+                </article>
+
+                <!-- Urban Jungle -->
+                <article class="cp-block">
+                    <img src="../fotos/urbanjungle.png" alt="Urban Jungle стиль" class="cp-img cp-left">
+                    <h3>Urban Jungle — «Дом, превращённый в джунгли»</h3>
+                    <p>
+                        Для тех, кто хочет много зелени, много фактуры и насыщенной атмосферы. Это стиль творческих
+                        людей и коллекционеров. Лианы, пальмы, подвесные кашпо и стойки создают ощущение маленьких
+                        тропиков прямо в квартире.
+                    </p>
+                </article>
             </section>
             <div id="scroll-trigger"></div>
+            
         </main>
-        <!--БОКОВАЯ ПАНЕЛЬ-->
-        <aside>
-            <h3>Полезные советы!</h3>
-            <p>Регулярно протирайте листья растений от пыли - это улучшает их дыхание и фотосинтез.</p>
-            <p>Не переливайте растения! Большинство комнатных растений погибает от избыточного полива.</p>
-            <p>Раз в месяц поворачивайте горшок на 45 градусов для равномерного роста.</p>
-            <div id="daily-fact-widget">
-                <h3>Факт дня</h3>
-                <p class="fact-text" id="daily-fact-content">Загрузка...</p>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Контакты</h3>
+                    <address>
+                        Для консультации по выбору растений обращайтесь:<br>
+                        Телефон: <a href="tel:+79005657484">+7 (900) 565-74-84</a><br>
+                        Email: <a href="mailto:flowers@gmail.com">flowers@gmail.com</a><br>
+                        Адрес: г. Москва, ул. Цветочная, д. 15
+                    </address>
+                </div>
+                <div class="developer-info">
+                    <h3>Разработчик сайта</h3>
+                    <p>Сайт разработан студентом курса ИИТ</p>
+                    <p>© 2025 Все права защищены</p>
+                </div>
+                <div class="map-info">
+                    <h3>Мы на карте:</h3>
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aefd4e6e3d1c07147cda3b42174d35b2e93621fa20617ff8440b8eafa82c783c8&amp;source=constructor" width="100%" height="200" frameborder="0"></iframe>
+                </div>
             </div>
-            <div class="decor top-right" id="butterfly"></div>
-        </aside>
+        </footer>
         <script src="../scripts/script-first-card.js"></script>
         <script src="../scripts/script-caruosel.js"></script>
         <script src="../scripts/script-aside.js"></script>

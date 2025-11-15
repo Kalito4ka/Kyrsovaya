@@ -1,6 +1,4 @@
 body{
-    display: grid;
-    grid-template-columns: 3fr 1fr; 
     gap: 1rem;
     flex-direction: column;
     align-items: center;
@@ -20,8 +18,6 @@ body{
 }
 @media (max-width: 780px) {
     body {
-        /* При маленьком экране боковая панель располагается под основным контентом */
-        grid-template-columns: 1fr;
         gap: 0rem; /* Уменьшим отступ */
         padding-left: 10px;
         padding-right: 10px;
