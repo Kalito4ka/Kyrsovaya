@@ -381,13 +381,11 @@ blockquote::before{
 }
 
 /* Адаптив — на телефонах картинки сверху */
-@media (max-width: 700px) {
+@media (max-width: 380px) {
     .cp-img {
         float: none;
         display: block;
         margin: 0 auto 20px auto;
-        width: 80%;
-        height: 50%;
     }
 }
 /*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
