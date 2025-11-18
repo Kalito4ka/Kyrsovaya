@@ -140,6 +140,41 @@ aside .decor.top-right{
     background-size: contain;
     background-repeat: no-repeat;
 }
+#pixel-heart{
+    background-image: url('../fotos/pixel_heart.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#dance-cat{
+    background-image: url('../fotos/dance_cat.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#hello-kitty{
+    background-image: url('../fotos/hellokitty.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#jelly-cat{
+    background-image: url('../fotos/jelly_cat.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#messages{
+    background-image: url('../fotos/messages.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#blue-star{
+    background-image: url('../fotos/blue_star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#dolfin{
+    background-image: url('../fotos/decor_dolfin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 @media(max-width: 1220px){
     .decor{
         width: 70px;

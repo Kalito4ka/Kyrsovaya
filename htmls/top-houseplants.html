@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Домашние растения</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="../styles/style-all.css">
         <link rel="stylesheet" href="../styles/style-header.css">
         <link rel="stylesheet" href="../styles/style-page.css">
@@ -219,7 +220,30 @@
                         </div>
                     </article>
                 </div>
+                <div class="decor top-right" id="hello-kitty"></div>
+                <div class="decor bottom-left" id="dolfin"></div>
             </section>
+            <!-- --- Sidebar: Смешные новости о цветах --- -->
+            <aside class="news-sidebar" id="flowerNews" aria-labelledby="news-title">
+                <h3 id="news-title">Цветочные новости</h3>
+
+                <div class="news-viewport" id="newsViewport" aria-live="polite">
+                    <!-- Содержимое подставляется JS -->
+                    <div class="news-item" role="article">
+                        <img src="../fotos/news1.jpg" alt="Новость о цветах" class="news-img">
+                        <div class="news-text">
+                            <h4 class="news-head">Загрузка...</h4>
+                            <p class="news-body">Подождите — новости загружаются.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-controls">
+                    <button id="newsPrev" class="news-btn" aria-label="Предыдущая новость">‹</button>
+                    <button id="newsNext" class="news-btn" aria-label="Следующая новость">›</button>
+                </div>
+                <div class="decor top-right" id="messages"></div>
+            </aside>
             <section id="Second-card">
                 <h2>Для любителя — самые съедобные</h2>
                 <div class="container">
@@ -255,6 +279,64 @@
                         </div>
                     </div>
                 </div>
+                <div class="decor top-left" id="pixel-heart"></div>
+                <div class="decor bottom-right" id="jelly-cat"></div>
+            </section>
+            <section id="Third-card">
+                <h2>Для профессионала — Ботанический челлендж</h2>
+                <section class="challenge-section">
+                    <div class="challenge-intro">
+                        <h2 class="challenge-title">Проверь свои навыки!</h2>
+                        <p class="challenge-desc">Cможешь ли <span class="highlight">ТЫ</span> справиться с любым растением. Испытай удачу и получи растение со скидкой 50%!</p>
+                    </div>
+
+
+                    <div class="challenge-center">
+                        <!-- Карточка-гача -->
+                        <div id="mystery-card" class="mystery-card closed">
+                            <!-- Начальное состояние -->
+                            <div class="initial-state">
+                                <p class="initial-text">Нажмите, чтобы получить!</p>
+                            </div>
+
+
+                            <!-- Контент, который появляется после ролла -->
+                            <div class="card-content">
+                                <div>
+                                    <p id="rarity-info" class="rarity-info"></p>
+                                    <img id="plant-image" class="plant-image" alt="Рандомное растение">
+                                    <h3 id="plant-name" class="plant-name">...</h3>
+                                    <p id="plant-latin" class="plant-latin">...</p>
+                                </div>
+
+
+                                <div class="stats">
+                                    <p class="stats-title">Сложность:</p>
+                                    <div id="difficulty-stars" class="difficulty-stars">
+                                        <!-- Звездочки будут здесь -->
+                                    </div>
+                                    <div class="stat-row"><span>Уровень ухода:</span> <span id="stat-care" class="stat-value">...</span></div>
+                                    <div class="stat-row"><span>Полив:</span> <span id="stat-water" class="stat-value">...</span></div>
+                                    <div class="stat-row"><span>Cвет:</span> <span id="stat-light" class="stat-value">...</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Промокод -->
+                        <div id="promo-info" class="promo is-hidden">
+                            <p class="promo-title">Поздравляем! Ваш промокод на скидку 50%:</p>
+                            <p class="promo-code">GARDENPRO50</p>
+                        </div>
+
+
+                        <div id="error-message" class="error is-hidden">
+                            <p class="error-text">Карточка уже активирована. Перезагрузите страницу, чтобы попробовать снова.</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="decor top-right" id="blue-star"></div>
+                <div class="decor bottom-left" id="dance-cat"></div>
             </section>
         </main>
         <footer>
@@ -280,5 +362,7 @@
             </div>
         </footer>
         <script src="../scripts/script-flowersfornew.js"></script>
+        <script src="../scripts/script-gacha.js"></script>
+        <script src="../scripts/script-news.js"></script>
     </body>
 </html>
