@@ -1,3 +1,7 @@
+#First-card {
+    margin-top: 50px;
+}
+
 h2::before{
     content: "🌿";
 }
@@ -368,6 +372,9 @@ h2::before{
 
 }
 @media (max-width: 780px){
+    #First-card{
+        margin-top: 0px;
+    }
     .card {
         perspective: 1200px;
         min-height: 300px;
@@ -719,5 +726,83 @@ h2::before{
     .news-img{
         width: 150px;
         height: 150px;
+    }
+}
+
+/*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
+.decor{
+    /* Размер */
+    width: 100px;
+    height: 100px;
+    
+    /* Позиционирование */
+    position: absolute;
+    z-index: 10;
+}
+.decor.top-left{
+    top: -35px;
+    left: -45px;
+    right: auto;
+    bottom: auto;
+}
+.decor.top-right{
+    top: -35px; 
+    right: -35px;
+}
+aside .decor.top-right{
+    top: -25px; 
+    right: -25px;
+}
+.decor.bottom-left{
+    bottom: -25px; /* Привязка к низу */
+    left: -35px;   /* Привязка к левому краю */
+    top: auto;
+    right: auto;
+}
+.decor.bottom-right{
+    bottom: -25px;
+    right: -30px;
+    top: auto;
+    left: auto;
+}
+@media(max-width: 1220px){
+    .decor{
+        width: 80px;
+        height: 80px;
+    }
+    .decor.top-left{
+        top: -25px;
+        left: -30px;
+        right: auto;
+        bottom: auto;
+    }
+    .decor.top-right{
+        top: -30px; 
+        right: -25px;
+    }
+    .decor.bottom-left{
+        bottom: -15px; /* Привязка к низу */
+        left: -20px;   /* Привязка к левому краю */
+        top: auto;
+        right: auto;
+    }
+    .decor.bottom-right{
+        bottom: -25px;
+        right: -25px;
+        top: auto;
+        left: auto;
+    }
+}
+@media(max-width: 410px){
+    .decor{
+        width: 50px;
+        height: 50px;
+    }
+    .decor.top-right{
+        top: -15px; 
+        right: 0px;
+    }
+    aside .decor.top-right{
+        right: -5px;
     }
 }

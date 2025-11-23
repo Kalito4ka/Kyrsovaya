@@ -66,42 +66,7 @@ ul {
     color: #00833f; /* Насыщенный зеленый */
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
-/*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
-.decor{
-    /* Размер */
-    width: 85px;
-    height: 85px;
-    
-    /* Позиционирование */
-    position: absolute;
-    z-index: 10;
-}
-.decor.top-left{
-    top: -35px;
-    left: -25px;
-    right: auto;
-    bottom: auto;
-}
-.decor.top-right{
-    top: -35px; 
-    right: -15px;
-}
-aside .decor.top-right{
-    top: -25px; 
-    right: -25px;
-}
-.decor.bottom-left{
-    bottom: -25px; /* Привязка к низу */
-    left: -35px;   /* Привязка к левому краю */
-    top: auto;
-    right: auto;
-}
-.decor.bottom-right{
-    bottom: -10px;
-    right: -10px;
-    top: auto;
-    left: auto;
-}
+
 
 /*Украшения*/
 #clever{
@@ -174,35 +139,9 @@ aside .decor.top-right{
     background-image: url('../fotos/decor_dolfin.png');
     background-size: contain;
     background-repeat: no-repeat;
+    transform: rotate(-90deg);
 }
-@media(max-width: 1220px){
-    .decor{
-        width: 70px;
-        height: 70px;
-    }
-    .decor.top-left{
-        top: -25px;
-        left: -15px;
-        right: auto;
-        bottom: auto;
-    }
-    .decor.top-right{
-        top: -25px; 
-        right: -5px;
-    }
-    .decor.bottom-left{
-        bottom: -15px; /* Привязка к низу */
-        left: -20px;   /* Привязка к левому краю */
-        top: auto;
-        right: auto;
-    }
-    .decor.bottom-right{
-        bottom: -5px;
-        right: -5px;
-        top: auto;
-        left: auto;
-    }
-}
+
 @media(max-width: 1220px){
     .timeline-carousel .tc-slide {
         /* 2 видимых слайда: (100% - 1*20px gap) / 2 */
@@ -234,18 +173,5 @@ aside .decor.top-right{
     }
     main{
         grid-template-columns: 1fr;
-    }
-}
-@media(max-width: 410px){
-    .decor{
-        width: 50px;
-        height: 50px;
-    }
-    .decor.top-right{
-        top: -15px; 
-        right: 0px;
-    }
-    aside .decor.top-right{
-        right: -5px;
     }
 }
