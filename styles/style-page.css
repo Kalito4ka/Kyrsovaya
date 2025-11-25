@@ -141,7 +141,57 @@ ul {
     background-repeat: no-repeat;
     transform: rotate(-90deg);
 }
-
+#blueberries{
+    background-image: url('../fotos/decor_blueberries.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#bro{
+    background-image: url('../fotos/decor_bro.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#cutebunny{
+    background-image: url('../fotos/decor_cutebunny.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#disk{
+    background-image: url('../fotos/decor_disk.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#icecream{
+    background-image: url('../fotos/decor_icecream.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#jellyturtle{
+    background-image: url('../fotos/decor_jelly_turtle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+}
+#jellyfish{
+    background-image: url('../fotos/decor_jellyfish.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#music-cat{
+    background-image: url('../fotos/decor_music_cat.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#jelly-star-1{
+    background-image: url('../fotos/decor_star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#jelly-star-2{
+    background-image: url('../fotos/decor_star2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 @media(max-width: 1220px){
     .timeline-carousel .tc-slide {
         /* 2 видимых слайда: (100% - 1*20px gap) / 2 */
