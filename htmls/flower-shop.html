@@ -5,13 +5,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Домашние растения</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" href="../styles/style-all.css">
         <link rel="stylesheet" href="../styles/style-header.css">
+        <link rel="stylesheet" href="../styles/style-flower-shop.css">
         <link rel="stylesheet" href="../styles/style-body.css">
         <link rel="stylesheet" href="../styles/style-footer.css">
     </head>
     <body>
-        <!--Шапка сайта-->
         <header class = "header-nav">
             <div class="header-headline">
                 <img src="../fotos/icon.png" alt="Иконка растения" class="headline-icon">
@@ -21,10 +22,8 @@
                 </div>
             </div>
 
-            <!-- Бургер Тоггл (Скрытый чекбокс для управления меню) -->
             <input id="burger-toggle" class="burger-toggle" type="checkbox" aria-hidden="true">
         
-            <!-- Иконка Бургера -->
             <label for="burger-toggle" class="burger" aria-hidden="true">
                 <span class="burger-lines"></span>
             </label>
@@ -48,6 +47,115 @@
                 </ol>
             </nav>
         </header>
+        <main class="container">
+            
+            <section class="discovery-section">
+                <h2>🔥 Растения со скидкой (Успей купить!) 🔥</h2>
+            </section>
+            <section class="product-grid" id="discountGrid"></section>
+            
+            <hr class="section-divider">
+
+            <section class="discovery-section">
+                <h2>💚 Найди растение, которое подходит именно тебе 💚</h2>
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all-plants">🌿 Все Растения</button>
+                    <button class="filter-btn" data-filter="for-self">👤 Для себя</button>
+                    <button class="filter-btn" data-filter="gift">🎁 В подарок</button>
+                    <button class="filter-btn" data-filter="pet-safe">🐾 Для питомцев безопасные</button>
+                </div>
+            </section>
+
+            <section class="product-grid" id="plantGrid"></section>
+
+            <hr class="section-divider">
+
+            <section class="discovery-section">
+                <h2>🏺 Добавь уютный дом: Красивые Горшки 🏺</h2>
+            </section>
+
+            <section class="product-grid" id="potGrid"></section>
+        </main>
+
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-basket"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+
+        <div class="modal" id="promoModal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Ввести Промокод 🏷️</h3>
+                <p>Введите код, чтобы получить скидку 50% на одно акционное растение.</p>
+                <form id="promoForm">
+                    <label for="promoCodeInput">Промокод:</label>
+                    <input type="text" id="promoCodeInput" name="promoCode" required>
+                    <button type="submit" class="place-order-btn">Применить</button>
+                    <p id="promoMessage" style="margin-top: 10px; font-weight: bold;"></p>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="modal" id="cartModal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Ваша Корзина 🛍️</h3>
+                <div class="cart-items" id="cartItems">
+                    <p class="empty-cart-message">Корзина пуста.</p>
+                </div>
+                <div class="cart-summary">
+                    <p>Итого: <span id="cartTotal">0</span> руб.</p>
+                    <button class="checkout-btn" id="checkoutBtn" disabled>Купить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="checkoutModal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Оформление Заказа 📝</h3>
+                <form id="checkoutForm">
+                    <label for="fio">ФИО:</label>
+                    <input type="text" id="fio" name="fio" required>
+                    <label for="phone">Номер телефона:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="address">Адрес доставки:</label>
+                    <input type="text" id="address" name="address" required>
+                    
+                    <hr>
+                    <h4>Данные карты (имитация)</h4>
+                    <label for="cardNum">Номер карты:</label>
+                    <input type="text" id="cardNum" name="cardNum" required maxlength="16" pattern="\d{16}" title="16 цифр">
+                    <div class="card-details">
+                        <div>
+                            <label for="cardExpiry">Срок (ММ/ГГ):</label>
+                            <input type="text" id="cardExpiry" name="cardExpiry" required maxlength="5" pattern="\d{2}\/\d{2}" placeholder="ММ/ГГ">
+                        </div>
+                        <div>
+                            <label for="cardCVC">CVC (3 цифры):</label>
+                            <input type="text" id="cardCVC" name="cardCVC" required maxlength="3" pattern="\d{3}">
+                        </div>
+                    </div>
+                    <button type="submit" class="place-order-btn">Подтвердить покупку</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal" id="receiptModal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Чек об успешной покупке 🎉</h3>
+                <p>Ваш заказ успешно оформлен!</p>
+                <p>Мы свяжемся с вами в ближайшее время для уточнения деталей доставки по адресу:</p>
+                <p id="receiptAddress" class="receipt-info"></p>
+                <p>Итоговая сумма: <span id="receiptTotal" class="receipt-info"></span> руб.</p>
+                <button class="close-btn">Закрыть</button>
+            </div>
+        </div>
+
         <footer>
             <div class="footer-content">
                 <div class="contact-info">
@@ -70,5 +178,6 @@
                 </div>
             </div>
         </footer>
+        <script src="../scripts/script-flower-shop.js"></script>
     </body>
 </html>

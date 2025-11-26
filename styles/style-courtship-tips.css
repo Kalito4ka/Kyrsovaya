@@ -599,3 +599,10 @@ aside .decor.top-right{
     }
 
 }
+@media(max-width: 780px){
+    .decor{
+        /* Размер */
+        width: 60px;
+        height: 60px;
+    }
+}
