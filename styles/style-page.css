@@ -55,6 +55,7 @@ h2, h3{
 /* Общий стиль для текста в секции */
 p,
 ul {
+    
     line-height: 1.6;
     margin-bottom: 15px;
     color: #007f11;

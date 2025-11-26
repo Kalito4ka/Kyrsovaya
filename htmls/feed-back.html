@@ -7,6 +7,7 @@
         <title>Домашние растения</title>
         <link rel="stylesheet" href="../styles/style-all.css">
         <link rel="stylesheet" href="../styles/style-header.css">
+        <link rel="stylesheet" href="../styles/style-feedback.css">
         <link rel="stylesheet" href="../styles/style-body.css">
         <link rel="stylesheet" href="../styles/style-footer.css">
     </head>
@@ -48,6 +49,127 @@
                 </ol>
             </nav>
         </header>
+
+        <main>
+
+            <section class="intro-section">
+                <div class="intro-text">
+                    <h2>Есть вопрос о растениях? Напишите нам! 🌿</h2>
+                    <p>Мы помогаем выбрать, ухаживать, спасать и вдохновляться. Даже если ваш вопрос кажется простым — для нас он важен.</p>
+                </div>
+                <div class="intro-image-container">
+                    <img src="../fotos/anime-girl.jpg" alt="Милая аниме-девочка с растением" class="intro-image">
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>📝 Личная онлайн консультация</h2>
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="fio">ФИО:</label>
+                        <input type="text" id="fio" name="fio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Почта (Email):</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Выбор даты проведения:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="question">Что вас интересует?</label>
+                        <select id="question" name="question" required>
+                            <option value="">Выберите вопрос</option>
+                            <option value="выбор">Выбор нового растения</option>
+                            <option value="уход">Проблемы с уходом (полив, свет, почва)</option>
+                            <option value="болезнь">Болезни и вредители</option>
+                            <option value="пересадка">Пересадка и размножение</option>
+                            <option value="дизайн">Фитодизайн и размещение</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Выбор времени консультации:</label>
+                        <div class="time-options">
+                            <div class="time-option">
+                                <input type="radio" id="time30" name="consultTime" value="30_250" required>
+                                <label for="time30">30 минут - 250 руб</label>
+                            </div>
+                            <div class="time-option">
+                                <input type="radio" id="time60" name="consultTime" value="60_450">
+                                <label for="time60">1 час - 450 руб</label>
+                            </div>
+                            <div class="time-option">
+                                <input type="radio" id="time90" name="consultTime" value="90_600">
+                                <label for="time90">1,5 часа - 600 руб</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Более подробное описание проблемы (необязательно):</label>
+                        <textarea id="description" name="description" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Записаться на консультацию</button>
+                </form>
+            </section>
+
+            <section class="plants-section">
+                <h2>🌱 Ваши растения</h2>
+                <p class="quote">«Каждое растение — живое. И за каждым стоит человек. Мы рядом, чтобы вам обоим было хорошо.»</p>
+
+                <div class="plant-list">
+                    <div class="plant-card"><img src="../fotos/feedback1.jpg" alt="Растение 1" class="plant-image">@alino4ka</div>
+                    <div class="plant-card"><img src="../fotos/feedback2.jpg" alt="Растение 2" class="plant-image">@flowerLOVER</div>
+                    <div class="plant-card"><img src="../fotos/feedback3.jpg" alt="Растение 3" class="plant-image">@RoseVibes</div>
+                    <div class="plant-card"><img src="../fotos/feedback4.jpg" alt="Растение 4" class="plant-image">@home_plants</div>
+                    <div class="plant-card"><img src="../fotos/feedback5.jpg" alt="Растение 5" class="plant-image">@CoolMan</div>
+                    <div class="plant-card"><img src="../fotos/feedback6.jpg" alt="Растение 6" class="plant-image">@CatsAndPlants</div>
+                </div>
+
+                <div class="like-button-container">
+                    <button class="like-btn" id="likeButton" data-liked="false">
+                        <span class="like-icon" id="likeIcon">🤍</span> 
+                        Понравилось: <span id="likeCount">142</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="anonymous-section">
+                <h2>❓ Задать вопрос анонимно</h2>
+                <p>Подойдёт, если стесняетесь или просто не хотите оставлять контакты.</p>
+                <form>
+                    <div class="form-group">
+                        <label for="anonQuestion">Ваш вопрос:</label>
+                        <textarea id="anonQuestion" name="anonQuestion" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Отправить вопрос</button>
+                </form>
+            </section>
+
+            <section class="before-after-section">
+                <h2>✨ Вот ваши растения, которые мы смогли спасти!</h2>
+                
+                <div class="before-after-gallery">
+                    <div class="ba-card">
+                        <img src="../fotos/feedback_monstera1.jpg" alt="Растение в плохом состоянии 1" class="ba-image ba-image-before">
+                        <img src="../fotos/feedback_monstera2.jpg" alt="Растение в хорошем состоянии 1" class="ba-image ba-image-after">
+                    </div>
+                    <div class="ba-card">
+                        <img src="../fotos/feedback_citrus1.jpg" alt="Растение в плохом состоянии 2" class="ba-image ba-image-before">
+                        <img src="../fotos/feedback_citrus2.jpg" alt="Растение в хорошем состоянии 2" class="ba-image ba-image-after">
+                    </div>
+                    <div class="ba-card">
+                        <img src="../fotos/feedback_myholovka1.jpg" alt="Растение в плохом состоянии 3" class="ba-image ba-image-before">
+                        <img src="../fotos/feedback_myholovka2.jpg" alt="Растение в хорошем состоянии 3" class="ba-image ba-image-after">
+                    </div>
+                </div>
+            </section>
+        </main>
+
         <footer>
             <div class="footer-content">
                 <div class="contact-info">
@@ -70,5 +192,11 @@
                 </div>
             </div>
         </footer>
+        <!-- декоративный анимированный элемент Bongo-cat -->
+        <div class="bongo-cat" id = "bongo_cat" aria-hidden="true">
+            <span class="meow-text">Мяу-мяу!🐾</span>
+        </div>
+        <script src="../scripts/script-feedback.js"></script>
+        <script src="../scripts/script-bongo-cat.js"></script>
     </body>
 </html>
