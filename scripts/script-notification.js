@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 id: Date.now(),
                 message: "🎁 **Спецпредложение!** Получите случайное растение со **скидкой 50%**.",
                 linkText: "Получить скидку",
-                url: "../fotos/courtship-tips.html" // Замените на реальную ссылку
+                url: "../htmls/courtship-tips.html"
             };
         }
     }
