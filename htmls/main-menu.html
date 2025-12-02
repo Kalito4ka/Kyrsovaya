@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="../styles/style-page.css">
         <link rel="stylesheet" href="../styles/style-main-menu.css">
         <link rel="stylesheet" href="../styles/style-footer.css">
+        <link rel="stylesheet" href="../styles/style-notification.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
     <body>
         <!--Шапка сайта-->
@@ -212,10 +214,17 @@
                 <div class="decor top-right" id="nyancat"></div>
                 <div class="decor bottom-left" id="turtle"></div>
             </section>
-            <div id="scroll-trigger"></div>
             
         </main>
-        
+        <div id="scroll-trigger"></div>
+            <div class="notification-container">
+                <button class="notification-button" id="notificationButton">
+                    <i class="notification-icon fas fa-bell"></i>
+                    <span class="notification-count" id="notificationCount">0</span>
+                </button>
+
+            <div class="notifications-dropdown" id="notificationsDropdown"></div>
+        </div>
         <footer>
             <div class="footer-content">
                 <div class="contact-info">
@@ -241,5 +250,6 @@
         <script src="../scripts/script-first-card.js"></script>
         <script src="../scripts/script-caruosel.js"></script>
         <script src="../scripts/script-aside.js"></script>
+        <script src="../scripts/script-notification.js"></script>
     </body>
 </html>

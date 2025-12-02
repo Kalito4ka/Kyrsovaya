@@ -7,6 +7,8 @@
         <title>Домашние растения</title>
         <link rel="stylesheet" href="../styles/style-all.css">
         <link rel="stylesheet" href="../styles/style-page.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="../styles/style-notification.css">
         <link rel="stylesheet" href="../styles/style-header.css">
         <link rel="stylesheet" href="../styles/style-body.css">
         <link rel="stylesheet" href="../styles/style-courtship-tips.css">
@@ -268,7 +270,15 @@
                 <div class="decor bottom-left" id="jelly-star-2"></div>
             </section>
         </main>
-        
+        <div id="scroll-trigger"></div>
+            <div class="notification-container">
+                <button class="notification-button" id="notificationButton">
+                    <i class="notification-icon fas fa-bell"></i>
+                    <span class="notification-count" id="notificationCount">0</span>
+                </button>
+
+            <div class="notifications-dropdown" id="notificationsDropdown"></div>
+        </div>
         <footer>
             <div class="footer-content">
                 <div class="contact-info">
@@ -294,5 +304,6 @@
         <script src="../scripts/script-water-ground.js"></script>
         <script src="../scripts/script-room-dots.js"></script>
         <script src="../scripts/script-noob-warnings.js"></script>
+        <script src="../scripts/script-notification.js"></script>
     </body>
 </html>

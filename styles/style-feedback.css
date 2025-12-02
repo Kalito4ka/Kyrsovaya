@@ -413,3 +413,106 @@ input:focus, select:focus, textarea:focus {
     /* Сдвигаем вверх для эффекта "появления" */
     transform: translateX(-50%) translateY(-5px);
 }
+/*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
+/*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
+.decor{
+    /* Размер */
+    width: 85px;
+    height: 85px;
+    
+    /* Позиционирование */
+    position: absolute;
+    z-index: 10;
+}
+.decor.top-left{
+    top: -20px;
+    left: -15px;
+    right: auto;
+    bottom: auto;
+}
+.decor.top-right{
+    top: -25px; 
+    right: -20px;
+}
+aside .decor.top-right{
+    top: -25px; 
+    right: -25px;
+}
+.decor.bottom-left{
+    bottom: -25px; /* Привязка к низу */
+    left: -15px;   /* Привязка к левому краю */
+    top: auto;
+    right: auto;
+}
+
+@media(max-width: 590px){
+    .decor{
+        width: 60px;
+        height: 60px;
+    }
+}
+#feedback_bantik1{
+    background-image: url('../fotos/decor_feedback_bantik1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(30deg);
+}
+#feedback_bantik2{
+    background-image: url('../fotos/decor_feedback_bantik2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-30deg);
+}
+#feedback_butterfly{
+    background-image: url('../fotos/decor_feedback_butterfly.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#feedback_cake{
+    background-image: url('../fotos/decor_feedback_cake.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#feedback_flower1{
+    background-image: url('../fotos/decor_feedback_flower.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+}
+@media(max-width: 590px){
+    #feedback_flower1{
+        width: 50px;
+        height: 50px;
+    }
+}
+#feedback_flower2{
+    background-image: url('../fotos/decor_feedback_flower2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#feedback_flower3{
+    background-image: url('../fotos/decor_feedback_flower3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#feedback_flower3{
+    background-image: url('../fotos/decor_feedback_flower3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#feedback_bunny{
+    background-image: url('../fotos/feedback_bunny.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#feedback_catunderflower{
+    background-image: url('../fotos/feedback_catunderflower.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#feedback_pygovka{
+    background-image: url('../fotos/feedback_pygovka.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -193,6 +193,7 @@ ul {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
 @media(max-width: 1220px){
     .timeline-carousel .tc-slide {
         /* 2 видимых слайда: (100% - 1*20px gap) / 2 */
