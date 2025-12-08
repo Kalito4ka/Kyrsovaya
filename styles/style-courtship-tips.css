@@ -15,7 +15,6 @@
     margin-top: 50px;
     position: relative; /*Создаем контекст для абсолютного позиционирования */
 }
-
 .tips-nav div{
     display: flex;
     flex-wrap: wrap;
@@ -49,11 +48,11 @@
     font-weight: 600;
     text-shadow: 0 0 5px rgba(68, 188, 106, 0.9);
 }
-
 .tips-nav button a:hover{
     color: #00b11d; 
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
 }
+
 @media (max-width: 800px)
 {
     .tips-nav div{

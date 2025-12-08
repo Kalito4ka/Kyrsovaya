@@ -1,4 +1,4 @@
-/* --- Кнопка Уведомлений --- */
+/*Кнопка Уведомлений*/
 .notification-container {
     position: fixed;
     bottom: 20px; 
@@ -11,12 +11,11 @@
     background-color: #4CAF50;
     color: white;
     
-    /* Новые стили для круглого вида */
-    width: 50px; /* Задаем ширину */
-    height: 50px; /* Задаем высоту, чтобы был квадрат */
-    padding: 0; /* Убираем стандартные отступы */
-    border-radius: 50%; /* Делаем элемент круглым */
-    position: relative; /* Контекст для абсолютного позиционирования счетчика */
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    position: relative;
     
     font-size: 16px;
     border: none;
@@ -24,8 +23,8 @@
     
     /* Центрирование иконки в круге */
     display: flex;
-    justify-content: center; /* Центрирование по горизонтали */
-    align-items: center; /* Центрирование по вертикали */
+    justify-content: center;
+    align-items: center;
     
     font-size: 16px;
     border: none;
@@ -37,41 +36,31 @@
 }
 
 .notification-icon {
-    /* margin-right: 8px; */ /* Эту строку можно удалить */
-    font-size: 1.5em; /* Можно увеличить размер иконки */
+    font-size: 1.5em;
 }
 
 .notification-count {
     background-color: #ff0000;
     color: white;
     border-radius: 50%;
-    
-    /* Новые стили для позиционирования */
-    position: absolute; /* Позиционирование относительно .notification-button */
-    top: -5px; /* Смещение вверх от верхнего края кнопки */
-    right: -5px; /* Смещение вправо от правого края кнопки */
-    
-    /* Стили для маленького красного круга */
-    padding: 2px 5px; /* Уменьшаем padding */
-    font-size: 0.7em; /* Уменьшаем шрифт */
-    min-width: 16px; /* Минимальная ширина для числа 1 */
-    text-align: center; /* Центрирование текста */
 
-    /* УДАЛИТЬ: margin-left: 8px; */
-    
-    /* Скрыть по умолчанию, если нет уведомлений */
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    /* Стили для маленького красного круга */
+    padding: 2px 5px;
+    font-size: 0.7em;
+    min-width: 16px;
+    text-align: center;
     display: none; 
 }
 
-/* --- Выпадающий Список Уведомлений --- */
 .notifications-dropdown {
-    display: none; /* Скрыт по умолчанию */
+    display: none;
     position: absolute;
     right: 0;
-    
-    /* НОВЫЕ СВОЙСТВА: Позиционирование списка над кнопкой */
-    bottom: 100%; /* Выравнивает низ списка по верхнему краю родителя */
-    margin-bottom: 5px; /* Небольшой отступ между кнопкой и списком */
+    bottom: 100%;
+    margin-bottom: 5px;
     
     
     background-color: white;

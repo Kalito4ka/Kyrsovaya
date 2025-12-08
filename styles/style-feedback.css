@@ -33,37 +33,25 @@
 }
 
 .intro-image-container {
-    /* Обеспечивает, что контейнер находится справа от текста (вместе с display: flex на родительском элементе) */
     max-width: 40%; 
-    /* Выравнивает содержимое контейнера (изображение) по правому краю, если оно меньше max-width контейнера */
     text-align: right;
 }
 
 .intro-image {
-    /* 1. Квадратный и не слишком большой размер (100x100px) */
     width: 200px;
     height: 200px;
-    
-    /* Убедитесь, что эта строка удалена или уменьшена, так как она принудительно устанавливает высоту 250px! */
-    /* min-height: 250px; <-- УДАЛИТЬ ИЛИ УМЕНЬШИТЬ */
-
-    /* 2. Обеспечивает, что изображение заполняет квадрат, не искажая пропорции */
     object-fit: cover;
-    
     border-radius: 8px;
     background-color: #c8e6c9;
-    /* block позволяет text-align: right работать, если изображение - единственное содержимое */
     display: block; 
 }
-/* ====================
-   Секция 2: Форма
-   ==================== */
+/* ====================Секция 2: Форма==================== */
 .form-section, .plants-section, .anonymous-section, .before-after-section {
     padding: 30px;
     border-radius: 20px;
     margin-bottom: 30px;
     background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: /*тень*/
+    box-shadow:
         0 4px 30px rgba(0, 0, 0, 0.1),
         0 0 10px rgba(255, 255, 255, 0.6) inset;
     backdrop-filter: blur(5px); /*блюр фона*/
@@ -146,9 +134,7 @@ input:focus, select:focus, textarea:focus {
     background-color: #3cb371;
 }
 
-/* ====================
-   Секция 3: Растения
-   ==================== */
+/* ====================Секция 3: Растения==================== */
 .plants-section p.quote {
     text-align: center;
     font-style: italic;
@@ -204,18 +190,14 @@ input:focus, select:focus, textarea:focus {
     font-size: 1.2em;
 }
 
-/* ====================
-   Секция 4: Анонимный вопрос
-   ==================== */
+/* ====================Секция 4: Анонимный вопрос==================== */
 .anonymous-section p {
     color: #666;
     font-style: italic;
     margin-bottom: 20px;
 }
 
-/* ====================
-   Секция 5: До/После
-   ==================== */
+/* ====================Секция 5: До/После==================== */
 .before-after-gallery {
     display: flex;
     gap: 20px;
@@ -239,143 +221,118 @@ input:focus, select:focus, textarea:focus {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 1; /* Начальное состояние (Плохо) */
+    opacity: 1;
     transition: opacity 0.5s;
 }
 
-/* Изображение "После" (в хорошем состоянии) */
 .ba-image-after {
     opacity: 0; 
 }
 
 .ba-card:hover .ba-image-before {
-    opacity: 0; /* При наведении скрываем "До" */
+    opacity: 0;
 }
 
 .ba-card:hover .ba-image-after {
-    opacity: 1; /* При наведении показываем "После" */
+    opacity: 1;
 }
 
 .ba-card:hover {
     transform: scale(1.03);
 }
 @media (max-width: 780px) {
-    
-    /* 1. Адаптация вводной секции: Текст и картинка друг над другом */
     .intro-section {
-        flex-direction: column; /* Элементы идут вертикально */
+        flex-direction: column;
         padding: 40px 30px;
         gap: 15px;
     }
 
     .intro-text,
     .intro-image-container {
-        max-width: 100%; /* Занимают всю доступную ширину */
-        text-align: center; /* Центрируем изображение */
+        max-width: 100%;
+        text-align: center;
     }
-
-    /* 2. Адаптация шрифтов */
-
-    /* Основные подзаголовки (H2) */
     h2 {
         font-size: 1.2rem; 
     }
-    
-    /* Подзаголовок вводной секции и весь общий текст */
+
     .intro-text p,
     .anonymous-section p,
     .plants-section p.quote,
     label,
     .like-btn,
     .submit-btn {
-        font-size: 0.9rem; /* Общий текст и кнопки */
+        font-size: 0.9rem;
         line-height: 1.3;
     }
 
-    /* Вводные поля и кнопки */
     input, select, textarea {
         padding: 8px;
         font-size: 0.9rem;
     }
 
-    /* Уменьшаем размер карточек в галерее До/После */
+
     .before-after-gallery {
         flex-direction: column;
         gap: 10px;
     }
 
     .ba-card {
-        width: 350px; /* Шире для мобильного экрана */
-        height: 350px; /* Уменьшаем высоту */
+        width: 350px;
+        height: 350px;
         margin: 0 auto;
     }
-    
-    /* Перенос опций времени в форме для удобства */
+
     .time-options {
         flex-direction: column;
         gap: 10px;
     }
 
     .time-option label {
-        display: block; /* Растягиваем на всю ширину */
+        display: block;
         text-align: center;
     }
 }
 @media(max-width: 440px){
     .ba-card {
-        width: 200px; /* Шире для мобильного экрана */
-        height: 200px; /* Уменьшаем высоту */
+        width: 200px;
+        height: 200px;
     }
 }
 @media(max-width: 270px){
     .ba-card {
-        width: 90%; /* Шире для мобильного экрана */
-        height: 200px; /* Уменьшаем высоту */
+        width: 90%;
+        height: 200px;
     }
 }
-/*бонго*/
-/* Позиционирование и стилизация элемента */
+/*===============бонго===========*/
 .bongo-cat {
-
-    /* Фиксируем в окне браузера */
     position: fixed;
-    bottom: 0px; /* Отступ от нижнего края */
-    right: 20px; /* Отступ от правого края */
-    
-    /* Размеры*/
+    bottom: 0px;
+    right: 20px;
+
     width: 100px;
     height: 100px;
     
-    /* Изображение Bongo Cat в качестве фона */
     background-image: url('../fotos/bongo_cat_1.png');
-    background-size: contain; /* Вписываем изображение в размер блока */
-    
-    /*всегда сверху */
+    background-size: contain;
+
     z-index: 9999;
     
-    /* Применяем анимацию "дыхания" */
     animation: breathing 3s ease-in-out infinite alternate;
     
-    /* Улучшение качества для предотвращения размытия при масштабировании */
     will-change: transform;
 }
-/* Определение анимации "дыхания" */
 @keyframes breathing {
-    /* Начальное состояние: используем alternate (0→100, затем 100→0) */
     from {
-        /* Начальное состояние: немного повернут, немного меньше */
         transform: scale(1.03) rotate(-1deg);
     }
     
-    /* Среднее состояние - "вдох" (больше и растянут) */
     50% {
-        /* Максимальное растяжение/вдох: чуть-чуть растянут по вертикали, совсем небольшое движение вверх */
         transform: translateY(-2px) scale(1.02, 1.15) rotate(1deg);
     }
     
-    /* Конечное состояние (немного вернулся) */
     to {
-        /* Возврат к почти начальному: немного сжат, легкое покачивание в другую сторону */
         transform: scale(1) rotate(-1.5deg);
     }
 }
@@ -387,20 +344,17 @@ input:focus, select:focus, textarea:focus {
     position: absolute;
     top: -30px;
     left: 50%;
-    transform: translateX(-50%) translateY(10px); /* Центрируем и слегка сдвигаем вниз */
+    transform: translateX(-50%) translateY(10px);
 
     background-color: #faf3dc;
     border: 2px solid #fde382;
     border-radius: 10px;
     padding: 5px 10px;
-    white-space: nowrap; /* Не переносить текст */
-    font-size: 0.9rem; /*размер шрифта*/
-    font-weight: bold; /*жирность*/
+    white-space: nowrap;
+    font-size: 0.9rem; 
+    font-weight: bold;
     color: #3e2723;
-
-    /* Начальное состояние (Скрыто) */
     opacity: 0;
-    /* Убираем элемент из взаимодействия с мышью*/
     pointer-events: none;
 
     transition: 
@@ -408,19 +362,14 @@ input:focus, select:focus, textarea:focus {
         transform 0.3s ease-out;
 }
 .bongo-cat:hover .meow-text {
-    /* Делаем видимым */
     opacity: 1;
-    /* Сдвигаем вверх для эффекта "появления" */
     transform: translateX(-50%) translateY(-5px);
 }
 /*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
-/*ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ*/
 .decor{
-    /* Размер */
     width: 85px;
     height: 85px;
-    
-    /* Позиционирование */
+
     position: absolute;
     z-index: 10;
 }

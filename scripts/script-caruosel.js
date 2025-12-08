@@ -3,7 +3,6 @@
   // Селекторы
   const carousel = document.querySelector('.timeline-carousel');
   if (!carousel) return;
-
   const slidesWrap = carousel.querySelector('.tc-slides');
   const slides = Array.from(carousel.querySelectorAll('.tc-slide'));
   const prevBtn = carousel.querySelector('.tc-prev');
@@ -23,27 +22,20 @@
   let autoplayId = null;
   const AUTOPLAY_DELAY = 4500;
   const AUTOPLAY_ENABLED = true;
-
   /**
-   * Определяет количество слайдов, видимых на экране, 
-   * синхронизируясь с CSS Media Queries.
+   * Определяет количество слайдов, видимых на экране
    * @returns {number} Количество видимых слайдов (3, 2 или 1).
    */
   function getVisibleSlidesCount() {
       const width = window.innerWidth;
-      // СВЕРЬТЕСЬ С media queries в style-main-menu.css:
-      // max-width: 780px -> 1 слайд
       if (width <= 780) {
           return 1; 
-      // max-width: 1220px -> 2 слайда
       } else if (width <= 1220) {
           return 2; 
-      // Desktop (default) -> 3 слайда
       } else {
           return 3; 
       }
   }
-
   /**
    * Обновляет все параметры, зависящие от размера экрана (VISIBLE_SLIDES, MAX_PAGES, MAX_INDEX).
    * Вызывается при загрузке и изменении размера окна.
@@ -55,7 +47,6 @@
       if (newVisibleSlides !== VISIBLE_SLIDES) {
           VISIBLE_SLIDES = newVisibleSlides;
           
-          // ИСПРАВЛЕНИЕ ЛОГИКИ Скролла:
           // MAX_INDEX = общее количество слайдов - количество видимых слайдов.
           // Это индекс последнего слайда, который может быть первым видимым.
           MAX_INDEX = total - VISIBLE_SLIDES; 
@@ -81,25 +72,20 @@
           updateControlDots();
       }
   }
-
   // Обновленная функция для расчета фактического смещения (ширина одного слайда + gap)
   function getSlideOffset() {
     const firstSlide = slides[0];
     if (!firstSlide) return 0;
     
-    // Динамически определяем GAP, соответствующий CSS в style-main-menu.css
-    // 20px по умолчанию, 10px при max-width: 640px
+    // Динамически определяем GAP
     const GAP = window.innerWidth <= 640 ? 10 : 20; 
 
-    // Используем clientWidth, чтобы получить актуальную ширину, 
-    // установленную через CSS calc()
+    // Используем clientWidth, чтобы получить актуальную ширину
     const slideWidth = firstSlide.clientWidth; 
 
     // Сдвиг = ширина слайда + отступ
-    // Мы всегда сдвигаем на ширину ОДНОГО слайда + gap.
     return slideWidth + GAP;
   }
-
   /**
    * Применяет CSS transform для сдвига слайдов.
    */
@@ -108,22 +94,20 @@
       const offset = current * getSlideOffset();
       slidesWrap.style.transform = `translateX(-${offset}px)`;
   }
-
   /**
-   * Обновляет состояние кнопок (активна/неактивна).
+   * Обновляет состояние кнопок (активна/неактивна)
    */
   function updateControls() {
       // Отключаем 'Назад', если мы на первом слайде (индекс 0)
       prevBtn.disabled = current === 0;
       
-      // Отключаем 'Вперед', если мы на последней возможной странице (MAX_INDEX)
-      // Если MAX_INDEX = 0 (все слайды видны), то обе кнопки отключены.
+      // Отключает 'Вперед', если мы на последней возможной странице
+      // Если MAX_INDEX = 0, то обе кнопки отключены.
       nextBtn.disabled = current === MAX_INDEX;
       
       // Обновляем фокус доступности
       updateTabFocus(current);
   }
-
   /**
    * Обновляет фокус на элементах внутри слайдов.
    * Делает интерактивными только те слайды, которые видны или могут быть видны.
@@ -144,15 +128,12 @@
           slide.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
       });
   }
-
-  /**
-   * Переход к следующему слайду/странице.
-   */
+  /* Переход к следующему слайду/странице.*/
   function nextSlide() {
       if (isAnimating || current >= MAX_INDEX) return;
       isAnimating = true;
 
-      // Переход к следующему индексу (всегда +1, так как сдвигаемся на 1 слайд)
+      // Переход к следующему индексу
       current++;
       updateTransform();
       updateControls();
@@ -162,12 +143,9 @@
       // Сброс флага анимации после завершения transition
       setTimeout(() => {
           isAnimating = false;
-      }, 400); // 400ms - должно совпадать с CSS transition duration
+      }, 400);
   }
-
-  /**
-   * Переход к предыдущему слайду/странице.
-   */
+  /* Переход к предыдущему слайду/странице.*/
   function prevSlide() {
       if (isAnimating || current <= 0) return;
       isAnimating = true;
@@ -184,7 +162,6 @@
           isAnimating = false;
       }, 400);
   }
-
   /**
    * Переход к указанному индексу страницы.
    * @param {number} index - Индекс страницы (0 до MAX_INDEX).
@@ -197,20 +174,15 @@
       updateControlDots();
       startAutoplay();
   }
-
-  /**
-   * Создает и обновляет точки-контролы.
-   */
+  /*Создает и обновляет точки-контролы.*/
   function updateControlDots() {
       // Очищаем старые точки
       controls.innerHTML = ''; 
 
-      // ИСПРАВЛЕНИЕ: Количество точек равно MAX_PAGES
       for (let i = 0; i < MAX_PAGES; i++) {
           const dot = document.createElement('button');
           dot.className = 'tc-control-dot';
           dot.setAttribute('role', 'tab');
-          // Используем MAX_PAGES для правильного счета
           dot.setAttribute('aria-label', `Перейти к странице ${i + 1} из ${MAX_PAGES}`);
           
           if (i === current) {
@@ -220,15 +192,13 @@
               dot.setAttribute('aria-selected', 'false');
           }
 
-          // Добавляем обработчик клика для перехода
+          // обработчик клика для перехода
           dot.addEventListener('click', () => goToSlide(i));
           controls.appendChild(dot);
       }
   }
 
-  /**
-   * Обработчик нажатия клавиш для навигации.
-   */
+  /*Обработчик нажатия клавиш для навигации */
   function onKey(event) {
       switch (event.key) {
           case 'ArrowLeft':
@@ -239,7 +209,6 @@
               break;
       }
   }
-
   /**
    * Обработчик изменения размера окна.
    */
@@ -249,9 +218,7 @@
       // Обновляем transform для применения новой позиции и смещения
       updateTransform();
   }
-
-  // --- Автовоспроизведение ---
-
+  //Автовоспроизведение
   /**
    * Переходит к следующему слайду для автоплея.
    */
@@ -263,7 +230,6 @@
           nextSlide();
       }
   }
-
   /**
    * Запускает интервал автоплея.
    */
@@ -272,7 +238,6 @@
       stopAutoplay(); // Сначала очищаем, чтобы не было дублирования
       autoplayId = setInterval(autoplayHandler, AUTOPLAY_DELAY);
   }
-
   /**
    * Останавливает интервал автоплея.
    */
@@ -282,13 +247,10 @@
           autoplayId = null;
       }
   }
-
-  // --- Поддержка свайпов ---
-
+  //Поддержка свайпов
   let touchStartX = 0;
   let touchEndX = 0;
   const SWIPE_THRESHOLD = 50; // Минимальное расстояние свайпа в пикселях
-
   function handleGesture() {
       // Расчет разницы: положительное = свайп влево (prev), отрицательное = свайп вправо (next)
       const diff = touchStartX - touchEndX;
@@ -303,7 +265,6 @@
           }
       }
   }
-
   function addSwipeSupport() {
       // Добавляем {passive: true} для повышения производительности скролла
       slidesWrap.addEventListener('touchstart', e => {
@@ -319,15 +280,13 @@
           // Отслеживаем движение
       }, {passive: true});
   }
-
   // --- Инициализация ---
-
   function init() {
-    // 1. Устанавливаем начальные размеры и пределы (ВАЖНО для адаптивности)
+    // Устанавливаем начальные размеры и пределы (для адаптивности)
     // Эта функция автоматически вызывает updateTransform(), updateControls() и updateControlDots()
     updateCarouselDimensions(); 
     
-    // 2. Устанавливаем слушатели событий
+    // Устанавливаем слушатели событий
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
     window.addEventListener('keydown', onKey);
@@ -340,7 +299,7 @@
 
     addSwipeSupport();
 
-    // 3. Запускаем автоплей, если включен
+    // Запускаем автоплей, если включен
     if (AUTOPLAY_ENABLED) {
         startAutoplay();
     }
@@ -351,7 +310,7 @@
     carousel.addEventListener('focusin', stopAutoplay);
     carousel.addEventListener('focusout', startAutoplay);
 
-    // Доступность: для скринридеров — объявляем изменение слайда
+    // Доступность
     const srLive = document.createElement('div');
     srLive.setAttribute('aria-live', 'polite');
     srLive.className = 'sr-only';
@@ -372,7 +331,6 @@
       }
     });
   }
-
   // Запуск карусели
   init();
 

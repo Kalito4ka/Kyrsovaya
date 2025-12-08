@@ -95,6 +95,7 @@
                 <div class="decor top-right" id="clever"></div>
                 <div class="decor bottom-left" id="fish"></div>
             </section>
+
             <!--БОКОВАЯ ПАНЕЛЬ-->
             <aside>
                 <h3>Полезные советы!</h3>
@@ -107,6 +108,7 @@
                 </div>
                 <div class="decor top-right" id="butterfly"></div>
             </aside>
+
             <section id="Second-card">
                 <h3>История домашних растений</h3>
                 <div class="timeline-carousel" aria-roledescription="carousel">
@@ -166,14 +168,14 @@
                         </ul>
                     </div>
                     <div class="tc-controls" role="tablist" aria-label="Навигация по эпохам"></div>
-
-                    <button class="tc-btn tc-next" aria-label="Следующая эпоха">→</button>
+                        <button class="tc-btn tc-next" aria-label="Следующая эпоха">→</button>
                     </div>
                 </div>
                 <!--ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ-->
                 <div class="decor top-left" id="blue-flower"></div>
                 <div class="decor bottom-right" id="miku"></div>
             </section>
+
             <section id="Third-card">
                 <h2>Хочешь окунуться в мир растений?<br>Тогда время решить, какой философии ухода ты будешь придерживаться!</h2>
 
@@ -217,14 +219,16 @@
             
         </main>
         <div id="scroll-trigger"></div>
-            <div class="notification-container">
-                <button class="notification-button" id="notificationButton">
-                    <i class="notification-icon fas fa-bell"></i>
-                    <span class="notification-count" id="notificationCount">0</span>
-                </button>
+
+        <div class="notification-container">
+            <button class="notification-button" id="notificationButton">
+                <i class="notification-icon fas fa-bell"></i>
+                <span class="notification-count" id="notificationCount">0</span>
+            </button>
 
             <div class="notifications-dropdown" id="notificationsDropdown"></div>
         </div>
+
         <footer>
             <div class="footer-content">
                 <div class="contact-info">
@@ -243,10 +247,16 @@
                 </div>
                 <div class="map-info">
                     <h3>Мы на карте:</h3>
-                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aefd4e6e3d1c07147cda3b42174d35b2e93621fa20617ff8440b8eafa82c783c8&amp;source=constructor" width="100%" height="200" frameborder="0"></iframe>
+                    <iframe 
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Aefd4e6e3d1c07147cda3b42174d35b2e93621fa20617ff8440b8eafa82c783c8&amp;source=constructor" 
+                            width="100%" 
+                            height="200" 
+                            frameborder="0">
+                    </iframe>
                 </div>
             </div>
         </footer>
+        
         <script src="../scripts/script-first-card.js"></script>
         <script src="../scripts/script-caruosel.js"></script>
         <script src="../scripts/script-aside.js"></script>

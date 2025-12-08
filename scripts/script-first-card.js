@@ -5,7 +5,6 @@ const STEP_3_VALUE = 71;
 const STEP_4_VALUE = 97;
 
 let counterInitialized = false;
-
 /**
  * Плавно анимирует счетчик от текущего до целевого значения.
  * Поддерживает как увеличение, так и уменьшение.
@@ -23,43 +22,53 @@ function animateCounter(targetValue, duration = 1500) {
   // Если цель равна текущему — ничего не делаем
   if (targetValue === startValue) return;
 
+  //фиксирует текущее время высокой точности
+  //используется для вычисления прогресса анимации
   const startTimestamp = performance.now();
   const diff = targetValue - startValue;
 
   function updateCount(timestamp) {
+    //сколько миллисекунд прошло с начала анимации
     const elapsed = timestamp - startTimestamp;
+
     const progress = Math.min(elapsed / duration, 1);
+
+    //текущее числовое значение
     const currentValue = Math.round(startValue + diff * progress);
 
     countElement.textContent = `${currentValue}%`;
 
+    //сли progress < 1, нужно продолжать анимацию — рекурсивно вызываем requestAnimationFrame(updateCount) для следующего кадра
     if (progress < 1) {
       requestAnimationFrame(updateCount);
     } else {
       countElement.textContent = `${targetValue}%`;
     }
   }
-
   requestAnimationFrame(updateCount);
 }
-
 /**
  * Создаёт IntersectionObserver для запуска анимации при появлении элемента.
  * @param {string} elementId
  * @param {number} targetValue
  */
+
+//наблюдатель, который следит за тем, видим ли определённый элемент, и запускает анимацию при появлении.
 function createStepObserver(elementId, targetValue) {
   const targetElement = document.getElementById(elementId);
+  //проверяем поддержку IntersectionObserver в текущем окружении
   if (!targetElement || typeof IntersectionObserver === 'undefined') return;
 
+  //если элемент видим в пределах настроенного порога
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         animateCounter(targetValue, 1000);
+        //убираем наблюдение за этим элементом, потому что мы хотим сработать только один раз
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.1 }); //сработает, когда как минимум 10% площади целевого элемента попадут в область просмотра
 
   observer.observe(targetElement);
 }
@@ -72,7 +81,6 @@ function setupProgressionObservers() {
   createStepObserver('Third-card', STEP_3_VALUE);
   createStepObserver('scroll-trigger', STEP_4_VALUE);
 }
-
 /**
  * Инициализация приложения: запускаем стартовую анимацию и регистрируем наблюдателей.
  */
@@ -86,6 +94,5 @@ function initApp() {
   // (но можно вызывать сразу, если элементы уже в DOM)
   setupProgressionObservers();
 }
-
 // Запуск на событии DOMContentLoaded
 document.addEventListener('DOMContentLoaded', initApp);

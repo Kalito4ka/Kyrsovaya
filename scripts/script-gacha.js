@@ -9,7 +9,6 @@ const plantsData = [
     { name: "Венерина Мухоловка", latin: "Dionaea muscipula", rarityLevel: 5, difficultyRating: 3, stats: { care: "очень высокий", water: "дистиллир.", light: "прямой" }, image: "../fotos/Myholovka.jpg", rarityText: "ультра-редкий!" },
 ];
 
-// Обёртка на случай, если скрипт подключён без defer — но при defer это не повредит
 document.addEventListener('DOMContentLoaded', () => {
     // Получение элементов DOM
     const mysteryCard = document.getElementById('mystery-card');
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Заполненная звезда (Font Awesome solid)
                 stars += '<i class="fas fa-star" aria-hidden="true"></i>';
             } else {
-                // Пустая звезда (Font Awesome regular) — добавляем лёгкую прозрачность через класс
+                // Пустая звезда (Font Awesome regular)
                 stars += '<i class="far fa-star" aria-hidden="true"></i>';
             }
         }
@@ -60,17 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         hasRolled = true;
 
-        // 1) Выбираем случайное растение
+        // Выбираем случайное растение
         const randomIndex = Math.floor(Math.random() * plantsData.length);
         const selectedPlant = plantsData[randomIndex];
 
-        // 2) Запускаем анимацию ролла (CSS класс .rolling)
+        // Запускаем анимацию ролла (CSS класс .rolling)
         mysteryCard.classList.add('rolling');
 
         // Сразу прячем начальное содержимое (иконка вопроса)
         if (initialStateEl) initialStateEl.style.opacity = '0';
 
-        // 3) Через время, соответствующее длине анимации — обновляем содержимое
+        // Через время, соответствующее длине анимации — обновляем содержимое
         setTimeout(() => {
             // Убираем серый класс closed и прежние классы редкости (если были)
             mysteryCard.classList.remove('closed', 'rarity-level-1', 'rarity-level-2', 'rarity-level-3', 'rarity-level-4', 'rarity-level-5');

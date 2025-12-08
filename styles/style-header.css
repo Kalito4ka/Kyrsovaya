@@ -14,7 +14,6 @@
     gap: 15px;
     z-index: 1000;
 
-
     background: rgba(255, 255, 255, 0.15);
     background-image: 
     linear-gradient(
@@ -29,7 +28,7 @@
 .header-headline {
     display: flex;
     align-items: center;
-    gap: 12px; /* отступ между иконкой и текстом */
+    gap: 12px;
     text-align: left;
 }
 .headline-icon {
@@ -55,10 +54,10 @@
   text-shadow: none;
 }
 .main-nav{
-    width: 100%;              /* занимает всю доступную ширину */
-    max-width: 1200px;        /* не растягивается слишком сильно на больших экранах */
+    width: 100%;
+    max-width: 1200px;
     display: flex;
-    justify-content: center;  /* выравнивает пункты по центру */
+    justify-content: center;
     transition: width 0.3s ease;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.15);
@@ -126,15 +125,15 @@
     
 }
 .burger {
-    display: none; /* скрываем на десктопе */
+    display: none;
     width: 32px;
     padding-bottom: 16px;
     padding-top: 3px;
-    position: absolute; /* Позиционируем относительно header-nav */
+    position: absolute;
     top: 25px;
     right: 25px;
     cursor: pointer;
-    z-index: 1100; /* Поверх всего */
+    z-index: 1100;
 }
 .burger .burger-lines,
 .burger .burger-lines::before,
@@ -171,10 +170,8 @@
 }
 /*МОБИЛЬНАЯ ВЕРСИЯ НАВИГАЦИИ*/
 .mobile-nav {
-    display: none; /* скрываем по умолчанию */
+    display: none;
 }
-
-
 .mobile-nav a:hover {
     background: linear-gradient(145deg, #e6ffb2, #b2ff59);
     color: #00b11d;
@@ -186,9 +183,9 @@
 /*АДАПТИВЫ*/
 @media(max-width: 1220px){
     .header-nav {
-        flex-direction: column;       /* Строим элементы сверху вниз */
-        align-items: center;          /* Центрируем */
-        gap: 5px;                    /* Отступ между заголовком и меню */
+        flex-direction: column;       
+        align-items: center;
+        gap: 5px;
         padding: 10px;
     }
     .headline-text h1 {
@@ -316,10 +313,10 @@
         
     }
     .header-headline {
-        order: 1;                      /* заголовок идёт первым */
+        order: 1;                      
         display: flex;
-        flex-direction: column;        /* иконка и текст — в столбик */
-        align-items: center;           /* выравниваем по центру */
+        flex-direction: column;        
+        align-items: center;           
     }
     .headline-icon {
         display: none;
@@ -330,7 +327,7 @@
         padding-bottom: 1px;
     }
     .headline-text p {
-        display: none; /* скрываем подзаголовок */
+        display: none;
     }
     .burger {
         order: 2;                      

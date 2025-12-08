@@ -1,6 +1,22 @@
 main{
-    display: grid; /*макет из двух колонок. */
-    grid-template-columns: 3fr 1fr; /* Задает колонки: первая (основной контент) в 2 раза шире второй (сайдбар). */
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+section{
+    grid-column: 1;
+    width: 95%;
+    min-height: 300px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        0 0 10px rgba(255, 255, 255, 0.6) inset;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    position: relative;
 }
 aside{
     grid-column: 2;
@@ -31,22 +47,7 @@ aside p {
     line-height: 1.5;
     margin-bottom: 15px;
 }
-section{
-    grid-column: 1;
-    width: 95%; /*занимает % экрана*/
-    min-height: 300px; /*минимальная высота*/
-    margin: 30px auto; /*распологаем по центру, делаем отступ 30пкс между секциями*/
-    padding: 20px; /*внутренний отступ*/
-    border-radius: 20px; /*закругление краев*/
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: /*тень*/
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        0 0 10px rgba(255, 255, 255, 0.6) inset;
-    backdrop-filter: blur(5px); /*блюр фона*/
-    border: 1px solid rgba(255, 255, 255, 0.3);
 
-    position: relative; /*Создаем контекст для абсолютного позиционирования */
-}
 /*ОФОРМЛЕНИЕ ТЕКСТА*/
 h2, h3{
     color: #0f512f;
@@ -64,12 +65,13 @@ ul {
 /* Выделение ключевых фраз */
 .highlight {
     font-weight: 700;
-    color: #00833f; /* Насыщенный зеленый */
+    color: #00833f;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
 
 /*Украшения*/
+
 #clever{
     background-image: url('../fotos/decor_clever.png');
     background-size: contain;
@@ -196,7 +198,6 @@ ul {
 
 @media(max-width: 1220px){
     .timeline-carousel .tc-slide {
-        /* 2 видимых слайда: (100% - 1*20px gap) / 2 */
         flex: 0 0 calc((100% - 20px) / 2);
         width: calc((100% - 20px) / 2);
     }
@@ -205,7 +206,6 @@ ul {
     h2, h3{
         font-size: 1.2rem;
     }
-    /* Общий стиль для текста в секции */
     p,
     ul {
         line-height: 1.3;
@@ -216,10 +216,9 @@ ul {
     }
 
     aside {
-        /* При маленьком экране aside не липкий и занимает всю ширину */
         position: static; 
-        grid-column: 1; /* Перемещаем aside в единственную колонку */
-        width: 95%; /* Почти полная ширина */
+        grid-column: 1;
+        width: 95%;
         margin: 20px auto;
         top: auto;
     }

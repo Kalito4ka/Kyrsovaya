@@ -10,15 +10,15 @@ body{
         rgb(211, 232, 240)50%,
         rgb(168, 220, 241)75%,
         rgb(128, 210, 239)100%);
-    background-repeat: no-repeat; /*изображение не повторяется*/
-    background-size: cover; /*изображение занимает весь экраны*/
-    background-position: center center; /*позиционирование по центру изображения*/
-    background-attachment: fixed; /*изображение закреплено*/
-    min-height: 100vh; /*занимает всю высоту экрана viewport height*/
+    background-repeat: no-repeat;        /*изображение не повторяется*/
+    background-size: cover;              /*изображение занимает весь экраны*/
+    background-position: center center;  /*позиционирование по центру изображения*/
+    background-attachment: fixed;        /*изображение закреплено*/
+    min-height: 100vh;                   /*занимает всю высоту экрана*/
 }
 @media (max-width: 780px) {
     body {
-        gap: 0rem; /* Уменьшим отступ */
+        gap: 0rem;                       /* Уменьшим отступ */
         padding-left: 10px;
         padding-right: 10px;
     }

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // КОНСТАНТЫ
     const PROMO_CODE = 'GARDENPRO50';
 
-    // 1. Данные для акционных растений
+    // Данные для акционных растений
     const discountPlantsData = [
         { id: 101, type: 'plant', name: "Хлорофитум", price: 1000, tags: ['for-self', 'pet-safe'], image: "../fotos/chlorophytum.png", symbol: '⭐', symbolText: '<strong>Символ: Очищение воздуха.</strong><br>Очень неприхотливое и быстрорастущее растение. Идеально для начинающих.' },
         { id: 102, type: 'plant', name: "Сансевиерия", price: 1500, tags: ['for-self'], image: "../fotos/sansevieria.png", symbol: '⭐', symbolText: '<strong>Символ: Стойкость.</strong><br>Народное название "Тещин язык". Выживает в любых условиях освещения.' },
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 107, type: 'plant', name: "Венерина Мухоловка", price: 4000, tags: ['for-self'], image: "../fotos/Myholovka.jpg", symbol: '⭐', symbolText: '<strong>Символ: Уникальность.</strong><br>Хищное растение, требует дистиллированной воды и прямого солнца.' },
     ];
     
-    // 2. Данные для основного каталога (для заполнения, чтобы не было пустых карточек)
+    // Данные для основного каталога (для заполнения, чтобы не было пустых карточек)
     const plantProducts = [
         { id: 1, type: 'plant', name: 'Монстера Делициоза "Харизма"', price: 2500, tags: ['for-self'], image: '../fotos/monstera-deliciosa.png', symbol: '💡', symbolText: '<strong>Символ: Интеллект и рост.</strong><br>Тропический гигант, идеален для тех, кто стремится к новым знаниям и карьерному росту. Требует умеренного полива.' },
         { id: 2, type: 'plant', name: 'Фикус Бенджамина "Уют"', price: 1800, tags: ['gift', 'for-self'], image: '../fotos/ficus-benjamina.jpg', symbol: '🏡', symbolText: '<strong>Символ: Семейный очаг и покой.</strong><br>Создает атмосферу стабильности и гармонии. Отлично подходит для гостиной. Не любит сквозняков.' },
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 15, type: 'plant', name: 'Драцена Маргината "Надежда"', price: 1600, tags: ['gift'], image: '../fotos/dracaena-marginata.jpg', symbol: '🕊️', symbolText: '<strong>Символ: Мир и обновление.</strong><br>Отлично подходит для подарка на новоселье. Умеренный полив, любит яркий, но не прямой свет.' },
     ];
 
-    // 3. Фиктивные данные для горшков (Горшки: 3 шт)
+    // Фиктивные данные для горшков (Горшки: 3 шт)
     const potProducts = [
         { id: 201, type: 'pot', name: 'Горшок "Скандинавия"', price: 1200, image: '../fotos/pot-scandi.jpg', symbol: '⚪', symbolText: '<strong>Стиль: Минимализм.</strong><br>Глиняный горшок с интересным узором.' },
         { id: 202, type: 'pot', name: 'Горшок "Терракота"', price: 700, image: '../fotos/pot-terra.jpg', symbol: '🧱', symbolText: '<strong>Стиль: Классика.</strong><br>Глиняный горшок с дренажным отверстием.' },
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const allProducts = [...discountPlantsData, ...plantProducts, ...potProducts];
 
-    // 4. DOM элементы
+    // DOM элементы
     const discountGrid = document.getElementById('discountGrid'); // НОВАЯ СЕТКА
     const plantGrid = document.getElementById('plantGrid');
     const potGrid = document.getElementById('potGrid');
@@ -62,11 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const promoMessage = document.getElementById('promoMessage');
     const closeBtns = document.querySelectorAll('.modal .close-btn');
 
-    // 5. Состояние корзины и скидки
+    // Состояние корзины и скидки
     let cart = JSON.parse(localStorage.getItem('plantCart')) || [];
     let discountApplied = localStorage.getItem('discountApplied') === 'true';
-
-    // --- Функции рендеринга и логики ---
 
     /** Рендерит карточку товара */
     function renderProductCard(product, container) {
@@ -75,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const tags = product.tags ? product.tags.join(' ') : product.type;
         card.setAttribute('data-tags', tags);
         
-        // Добавляем класс для акционных товаров, если нужно
+        // Добавляем класс для акционных товаров
         const isDiscounted = discountPlantsData.some(dp => dp.id === product.id);
         if (isDiscounted) {
              card.classList.add('discount-item');
@@ -231,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCart();
     }
     
-    // --- Логика промокода ---
+    // Логика промокода 
     
     promoForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -258,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Обработчики событий ---
+    // Обработчики событий
 
     // Фильтрация
     filterBtns.forEach(btn => {
@@ -327,20 +325,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 
-        // 2. Очистка корзины и localStorage
+        // Очистка корзины и localStorage
         cart = [];
         discountApplied = false;
         updateCart(); // Обновление счетчика и очистка
         localStorage.removeItem('discountApplied');
 
-        // 3. Отображение чека
+        // Отображение чека
         receiptAddress.textContent = address;
         receiptTotal.textContent = Math.round(total).toLocaleString();
 
         checkoutModal.style.display = 'none';
         receiptModal.style.display = 'block';
 
-        // 4. Очистка формы
+        // Очистка формы
         checkoutForm.reset();
     });
 

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".test-answer-card");
     const resultBlock = document.getElementById("test-result");
-    // 💡 Определяем список возможных цветовых классов, которые нужно будет удалять.
+
     const colorClasses = ['bg-red-500', 'bg-yellow-500', 'bg-plant-green']; 
 
     cards.forEach(card => {
@@ -21,15 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
                 case 'wait':
                     message = '🫗 Грунт сухой! Если это не суккулент, то пора поливать.';
-                    // 💡 Используем 'bg-plant-green'
                     bgColor = 'bg-plant-green';
                     break;
             }
 
-            // 💡 ИСПРАВЛЕНИЕ: Вместо сброса всего className, удаляем старые цветовые классы
             colorClasses.forEach(c => resultBlock.classList.remove(c));
-            
-            // 💡 Добавляем новый цветовой класс
+
             resultBlock.classList.add(bgColor);
 
             resultBlock.textContent = message;

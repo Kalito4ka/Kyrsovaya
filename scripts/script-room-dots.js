@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Логика для секции "Освещение" ---
+    // Логика для секции "Освещение"
 
     const dotsContainer = document.getElementById('room-container');
     const infoBox = document.getElementById('lighting-info');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (data) {
             infoTitle.textContent = data.title;
-            infoText.innerHTML = data.plants; // Используем innerHTML для жирного шрифта (**)
+            infoText.innerHTML = data.plants; 
         }
     });
 });

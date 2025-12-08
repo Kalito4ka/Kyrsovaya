@@ -1,8 +1,9 @@
-/* ========== БАЗОВЫЙ FOOTER (твой исходник с небольшими правками) ========== */
+
+
 footer {
   width: 100%;
   padding: 2rem;
-  margin-top: 2rem; /* отступ между блоками */
+  margin-top: 2rem;
   grid-column: 1 / -1;
   background: rgba(255, 255, 255, 0.15);
   background-image: linear-gradient(
@@ -17,31 +18,22 @@ footer {
   color: #073b1a;
 }
 
-/* Контент футера: 2 колонки на десктопе */
 .footer-content {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  max-width: 1100px; /* ограничение ширины */
+  max-width: 1100px;
   align-items: start;
 }
 
-/* Если внутри .footer-content у тебя блоки, можно явно оформить */
-.footer-column {
-  /* полезно, если хочешь выравнивать содержимое внутри колонки */
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-/* Ссылки и прочие элементы */
 footer a {
   color: #007f11;
   text-decoration: none;
-  display: inline-block;       /* помогает увеличить кликабельную зону */
+  display: inline-block;     
   padding: 4px 0;
 }
+
 footer a:hover,
 footer a:focus {
   color: rgb(81, 175, 30);
@@ -49,8 +41,7 @@ footer a:focus {
   text-decoration: underline;
 }
 
-footer p,
-footer small {
+footer p{
   color: #007f11;
   margin: 0;
   line-height: 1.4;
@@ -62,31 +53,28 @@ address {
   margin-top: 1rem;
 }
 
-/* ========== АДАПТИВ: мобильная версия — одна колонка ========== */
+/*АДАПТИВ: мобильная версия — одна колонка*/
 @media (max-width: 780px) {
   footer {
-    padding: 1.25rem;          /* чуть меньше внутренний отступ на телефоне */
+    padding: 1.25rem;
     border-radius: 14px;
   }
 
-  /* Меняем сетку на одну колонку, центрируем содержимое */
   .footer-content {
     grid-template-columns: 1fr;
     gap: 1rem;
-    justify-items: center;     /* центрируем колонки по горизонтали */
-    text-align: center;        /* текст по центру — хорошо смотрится на мобильных */
+    justify-items: center;
+    text-align: center;
   }
 
-  /* Колонки становятся блоками, выравниваем по центру */
   .footer-column {
     width: 100%;
-    max-width: 560px;          /* ограничение, чтобы строки не были слишком широкими */
-    align-items: center;       /* центрируем элементы внутри колонки */
+    max-width: 560px;
+    align-items: center;
   }
 
-  /* Сделаем ссылки чуть легче воспринимаемыми и удобными для касания */
   footer a {
-    padding: 8px 6px;          /* увеличенная зона для тапа */
+    padding: 8px 6px;
     font-size: 1rem;
   }
 
@@ -95,8 +83,6 @@ address {
     font-size: 0.95rem;
   }
 }
-
-/* Дополнительно: если хочешь, чтобы на очень узких экранах все было компактнее */
 @media (max-width: 420px) {
   footer {
     padding: 1rem;

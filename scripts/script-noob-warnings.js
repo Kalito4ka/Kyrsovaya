@@ -32,7 +32,7 @@
     return s * 1000;
   }
 
-  // выбрать случайное предупреждение (не показывать текущее)
+  // выбрать случайное предупреждение
   let currentIndex = 0;
   function pickRandomIndex(){
     if(warnings.length <= 1) return 0;

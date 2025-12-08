@@ -1,15 +1,15 @@
 main{
     margin-top: 50px;
-    margin: 30px auto; /*распологаем по центру, делаем отступ 30пкс между секциями*/
-    border-radius: 20px; /*закругление краев*/
+    margin: 30px auto;
+    border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: /*тень*/
+    box-shadow:
         0 4px 30px rgba(0, 0, 0, 0.1),
         0 0 10px rgba(255, 255, 255, 0.6) inset;
-    backdrop-filter: blur(5px); /*блюр фона*/
+    backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 
-    position: relative; /*Создаем контекст для абсолютного позиционирования */
+    position: relative;
 }
 @media(max-width: 780px){
     main{
@@ -25,7 +25,7 @@ main{
     color: #388E3C;
     margin-bottom: 20px;
 }
-/* --- Фильтр --- */
+/*=========== Фильтр ========= */
 .filter-bar {
     display: flex;
     justify-content: center;
@@ -56,19 +56,18 @@ main{
     transform: scale(1.05);
 }
 
-/* --- Каталог товаров (Сетка) --- */
+/* Каталог товаров */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* --- Карточка товара --- */
+/* ============== Карточка товара ================ */
 .product-card {
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    /* ИСПРАВЛЕНИЕ: УДАЛЕНО overflow: hidden; чтобы подсказка не обрезалась */
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     padding-bottom: 15px;
@@ -101,8 +100,6 @@ main{
     color: #777;
     margin-bottom: 10px;
 }
-
-/* Иконка-символика */
 .symbol-icon {
     position: absolute;
     top: 10px;
@@ -110,25 +107,21 @@ main{
     font-size: 1.5em;
     color: #FFC107;
     cursor: help;
-    /* Убрана странная анимация */
     transition: color 0.3s; 
 }
-
-/* Изменено: нет анимации transform */
 .symbol-icon:hover {
     color: #FFA000;
 }
 
 .symbol-tooltip {
     visibility: hidden;
-    width: 250px; /* Увеличена ширина для большего текста */
+    width: 250px;
     background-color: #333;
     color: white;
-    text-align: left; /* Текст слева */
+    text-align: left;
     border-radius: 6px;
     padding: 10px;
     position: absolute;
-    /* Увеличен z-index для отображения поверх всего */
     z-index: 205; 
     right: 110%;
     top: 50%;
@@ -168,7 +161,7 @@ main{
     transform: translateY(-2px);
 }
 
-/* --- Иконка Корзины (Плавучая) --- */
+/* ============== Иконка Корзины ============= */
 .cart-icon {
     position: fixed;
     bottom: 30px;
@@ -205,7 +198,7 @@ main{
     font-weight: bold;
 }
 
-/* --- Модальное окно (Корзина/Оформление/Чек) --- */
+/* ============== Модальное окно (Корзина/Оформление/Чек) ====================== */
 .modal {
     display: none; /* Скрыто по умолчанию */
     position: fixed;
@@ -243,7 +236,7 @@ main{
     text-decoration: none;
 }
 
-/* --- Содержимое Корзины --- */
+/*========Содержимое Корзины============ */
 .cart-items {
     max-height: 300px;
     overflow-y: auto;
@@ -318,7 +311,7 @@ main{
     background-color: #388E3C;
 }
 
-/* --- Форма оформления заказа --- */
+/*=============Форма оформления заказа============== */
 #checkoutForm label {
     display: block;
     margin-top: 15px;
@@ -362,7 +355,6 @@ main{
     background-color: #E68900;
 }
 
-/* --- Чек --- */
 #receiptModal h3 {
     color: #4CAF50;
     text-align: center;
@@ -373,7 +365,7 @@ main{
     display: block;
     margin-top: 10px;
 }
-/* --- Разделитель секций --- */
+
 .section-divider {
     border: 0;
     height: 1px;
@@ -381,63 +373,47 @@ main{
     margin: 60px 0;
 }
 
-/* ========================================= */
-/* --- АДАПТИВНОСТЬ (Сдвиг модалки на 1220px) --- */
-/* ========================================= */
 @media(max-width: 1220px) {
-    /* Смещаем модальное окно чуть ниже */
     .modal-content {
-        margin: 15% auto; /* Изменяем 10% на 15% для смещения ниже */
+        margin: 15% auto;
     }
 }
-
-/* ========================================= */
-/* --- АДАПТИВНОСТЬ для СМАРТФОНОВ (780px) --- */
-/* ========================================= */
 @media(max-width: 780px) {
-    /* Основные заголовки */
     h2, h3 {
         font-size: 1.2rem;
     }
 
-    /* Общий текст */
     p, address, ul, ol, li, .product-price {
         font-size: 0.9rem;
         line-height: 1.3;
     }
 
-    /* Заголовки карточек */
     .product-name {
-        font-size: 1.1em; /* чуть больше, чем основной текст */
+        font-size: 1.1em;
     }
 
-    /* Кнопки */
     .filter-btn, .add-to-cart-btn, .checkout-btn, .place-order-btn {
         padding: 8px 15px;
         font-size: 0.9rem;
     }
-    
-    /* Сетка товаров */
+
     .product-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Чуть меньший минимальный размер */
         gap: 15px;
     }
 
-    /* Карточка товара */
     .product-card {
         padding-bottom: 10px;
     }
     .product-image {
-        height: 200px; /* Уменьшаем высоту изображения */
+        height: 200px;
     }
 
-    /* Модальные окна */
     .modal-content {
         margin: 20% auto; 
         padding: 20px;
     }
 
-    /* Элементы корзины */
     .cart-item {
         font-size: 0.9rem;
     }

@@ -12,6 +12,7 @@ const dailyFacts = [
 ];
 
 const factDisplayElement = document.getElementById('daily-fact-content');
+
 const intervalTime = 30000; // 30 секунд
 
 let currentFactIndex = 0;
@@ -32,10 +33,10 @@ function updateDailyFact() {
  * Инициализация виджета: установка интервала.
  */
 function startFactWidget() {
-    // 1. Показать первый факт сразу
+    //Показать первый факт сразу
     updateDailyFact();
     
-    // 2. Установить интервал для смены фактов
+    //Установить интервал для смены фактов
     factIntervalId = setInterval(updateDailyFact, intervalTime);
     console.log('Fact widget started. Interval ID:', factIntervalId);
 }
@@ -50,7 +51,6 @@ function stopFactWidget() {
         factIntervalId = null;
     }
 }
-
 
 // Запускаем виджет при загрузке страницы
 document.addEventListener('DOMContentLoaded', startFactWidget);

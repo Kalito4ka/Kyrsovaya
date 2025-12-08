@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const notificationButton = document.getElementById('notificationButton');
-    const notificationCount = document.getElementById('notificationCount');
-    const notificationsDropdown = document.getElementById('notificationsDropdown');
+    const notificationButton = document.getElementById('notificationButton'); //кнопка уведов
+    const notificationCount = document.getElementById('notificationCount');     //кол-во уведов
+    const notificationsDropdown = document.getElementById('notificationsDropdown'); //контейнер куда будут вставляться уведы
 
     let notificationList = []; // Массив для хранения всех уведомлений
     let unreadCount = 0;
 
-    /**ы
+    /**
      * Генерирует новое уведомление о магазине цветов.
      * @returns {object} Объект уведомления.
      */
@@ -23,24 +23,21 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             return {
                 id: Date.now(),
-                message: "🎁 **Спецпредложение!** Получите случайное растение со **скидкой 50%**.",
+                message: "🎁 **Спецпредложение!** Получите случайное растение **со скидкой 50%.**",
                 linkText: "Получить скидку",
                 url: "../htmls/courtship-tips.html"
             };
         }
     }
 
-    /**
-     * Обновляет отображение счетчика уведомлений.
-     */
+    /*Обновляет отображение счетчика уведомлений.*/
     function updateCountDisplay() {
         notificationCount.textContent = unreadCount;
-        notificationCount.style.display = unreadCount > 0 ? 'inline' : 'none';
+        notificationCount.style.display = unreadCount > 0 ? 'inline' : 'none'; 
+        //если счётсчик больше 0 то показываем увед, если нет
     }
 
-    /**
-     * Добавляет новое уведомление в список и обновляет счетчик.
-     */
+    /*Добавляет новое уведомление в список и обновляет счетчик.*/
     function addNotification() {
         const newNotification = createNewNotification();
         notificationList.unshift(newNotification); // Добавляем в начало списка
@@ -52,10 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             renderNotifications();
         }
     }
-
-    /**
-     * Отображает все уведомления в выпадающем списке.
-     */
+    /* Отображает все уведомления в выпадающем списке.*/
     function renderNotifications() {
         notificationsDropdown.innerHTML = ''; // Очищаем список
 
@@ -83,10 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             notificationsDropdown.appendChild(item);
         });
     }
-
-    /**
-     * Обработчик нажатия на кнопку уведомлений.
-     */
+    /*Обработчик нажатия на кнопку уведомлений.*/
     function toggleDropdown() {
         notificationsDropdown.classList.toggle('show');
 
@@ -99,12 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
-
-    // --- Инициализация и События ---
-
+    //Инициализация и События
     // Каждые 2 минуты
     setInterval(addNotification, 120000);
-
     // Первое уведомление сразу
     addNotification();
 
